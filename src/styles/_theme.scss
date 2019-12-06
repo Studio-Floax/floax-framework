@@ -1,0 +1,68 @@
+// THEMINGS INFORMATIONS
+// -------------------------------------------------------------------------------------------
+// Color map should provide
+// - base: main color to be used.
+// - contrast: Color that will provide readable text against the base color
+// - shade: 12% darker version of the base color (mix with black)
+// - tint: 10% lighter version of the base color (mix with white)
+//
+// EXAMPLE OF USE
+// - base primary
+//         background-color: ui-colors(primary, base)
+//         color: ui-colors(primary, contrast)
+// - hover secondary
+//         background-color: ui-colors(primary, shade)         
+//
+
+// NEUTRALS COLORS
+// -------------------------------------------------------------------------------------------
+$dark: #333333;
+$grey: #707070;
+$light: #ffffff;
+
+$neutrals: (
+    dark: (
+        base: #333333,
+        light: #555555,
+        deep: #222222
+    ),
+    grey: (
+        base: #707070,
+        light: #909090,
+        deep: #505050
+    ),
+    light: (
+        base: #FFFFFF
+    )
+);
+
+// UI COLORS
+// -------------------------------------------------------------------------------------------
+
+$darken-value: 12;
+$lighten-value: 10;
+
+$primary:           #45AB23 !default;
+$secondary:         #FDA432 !default;
+$accent:            #3dc2ff !default;
+
+$ui: (
+    primary: (
+        base:             $primary,
+        contrast:         neutrals-color(light, base),
+        shade:            darken($primary, $darken-value),
+        tint:             lighten($primary, $lighten-value)
+    ),
+    secondary: (
+        base:             $secondary,
+        contrast:         neutrals-color(dark, base),
+        shade:            darken($secondary, $darken-value),
+        tint:             lighten($secondary, $lighten-value)
+    ),
+    accent: (
+        base:             $accent,
+        contrast:         neutrals-color(light, base),
+        shade:            darken($accent, $darken-value),
+        tint:             lighten($accent, $lighten-value)
+    )
+);
