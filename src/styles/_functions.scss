@@ -1,0 +1,15 @@
+@function ui-color($name, $variation) {
+    $values: map-get($ui, $name);
+    $value: map-get($values, $variation);
+    $variable: --ion-color-#{$name}-#{$variation};
+
+    @return var(#{$variable}, $value);
+} 
+
+@function neutrals-color($name, $variation) {
+    $values: map-get($neutrals, $name);
+    $value: map-get($values, $variation);
+    $variable: --ion-color-#{$name}-#{$variation};
+
+    @return var(#{$variable}, $value);
+}  
