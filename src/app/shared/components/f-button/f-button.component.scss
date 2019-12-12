@@ -1,8 +1,109 @@
+@import 'src/styles/main';
+
+// Variables
+$button-padding: 5px;
+$icon-margin: 10%;
+
+$button-shape-strict: 0px;
+$button-shape-rounded: 5px;
+$button-shape-round: 50px;
+
+$button-color-primary: #AA88BB;
+$button-color-accent: #ACABFF;
+
+// Properties
 button {
-    display: flex;
+    display:         flex;
+    justify-content: space-between;
+    align-items:     center;
+
+    border: none;
+
+    padding-inline: $button-padding;
     width: 70px;
 }
 
-nb-icon {
-    width: 50%;
+
+// Button Style
+button.style-fill {
+
 }
+
+button.style-border {
+    
+}
+
+button.style-ghost {
+    
+}
+
+
+// Button type
+button.type-icon-left {
+    flex-direction: row;
+}
+
+button.type-icon-right {
+    flex-direction: row-reverse;
+}
+i.type-icon-left {
+    margin-right: $icon-margin;
+}
+
+i.type-icon-right {
+    margin-left: $icon-margin;
+}
+
+
+// Button color
+button.color-primary {
+    background-color: $button-color-primary;
+}
+
+button.color-accent {
+    background-color: $button-color-accent;
+}
+
+
+// Button shape
+button.shape-strict {
+    border-radius: $button-shape-strict;
+}
+
+button.shape-rounded {
+    border-radius: $button-shape-rounded;
+}
+
+button.shape-round {
+    border-radius: $button-shape-round;
+}
+
+
+// Button state
+button.state-default {
+    border-radius: $button-shape-round;
+}
+
+button.state-active {
+    border-radius: $button-shape-round;
+}
+
+button.state-pressed {
+    border-radius: $button-shape-round;
+}
+
+button.state-focus {
+    border-radius: $button-shape-round;
+}
+
+button.state-hover {
+    border-radius: $button-shape-round;
+}
+
+
+
+
+
+
+
+
