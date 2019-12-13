@@ -9,9 +9,9 @@ export class FButtonComponent implements OnInit {
 
   @Input() private icon: string;
   @Input() private text: string;
+  @Input() private color: string;
   @Input() private fill: string;
   @Input() private type: string;
-  @Input() private color: string;
   @Input() private shape: string;
   @Input() private state: string;
   
