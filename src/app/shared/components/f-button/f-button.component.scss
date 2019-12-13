@@ -4,142 +4,165 @@
 $button-padding: 5px;
 $icon-margin:    20%;
 
-$button-shape-strict:  0px;
-$button-shape-rounded: 5px;
-$button-shape-round:   50px;
+@mixin btn-type($color) {
+    &.fill-fill {
+        background-color: $color;
+        border: 1px solid $color;
+        transition: 0.3s;
 
-$button-color-primary:   #29A5FD;
-$button-color-secondary: #54C128;
-$button-color-accent:    #aa88bb;
-$button-color-default:   #7b4f92;
-$button-color-success:   #54C128;
-$button-color-info:      #2D81FF;
-$button-color-warning:   #FFC802;
-$button-color-danger:    #FF493F;
+        &:hover {
+            background-color: transparent;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-$colors_label: 
-            "primary", 
-            "secondary", 
-            "accent", 
-            "default", 
-            "success",
-            "info", 
-            "warning",
-	        "danger";
-$colors: 
-        $button-color-primary, 
-        $button-color-secondary, 
-        $button-color-accent,
-        $button-color-default, 
-        $button-color-success, 
-        $button-color-info,
-        $button-color-warning,
-	    $button-color-danger;
+        &:focus {
+            background-color: $color;
+            transition: 0.3s;
+        }
 
+        &:active {
+            background-color: $color;
+            transition: 0.3s;
+        }
+    }
 
+    &.fill-border {
+        background-color: transparent;
+        border: 1px solid $color;
+        transition: 0.3s;
+        
+        &:hover {
+            background-color: $color;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        &:focus {
+            background-color: transparent;
+            transition: 0.3s;
+        }
+
+        &:active {
+            background-color: transparent;
+            transition: 0.3s;
+        }
+    }
+
+    &.fill-ghost {
+        background-color: transparent;
+        border: 1px solid transparent;
+        transition: 0.3s;
+
+        &:hover {
+            border: 1px solid $color;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        &:focus {
+            border: 1px solid $color;
+            transition: 0.3s;
+        }
+
+        &:active {
+            background-color: $color;
+            transition: 0.3s;
+        }
+    }
+}
+
+    
 // Properties
 button {
-	display:         flex;
-	justify-content: flex-start;
-	align-items:     center;
-
-    border: none;
+    &.btn {
+        display:         flex;
+        justify-content: flex-start;
+        align-items:     center;
     
-    font-size:   1.5rem;
-    font-weight: 200;
+        border: none;
+        border-radius: 5px;
+        
+        font-size:   1.5rem;
+        font-weight: 200;
+        
+        padding-inline: $button-padding;
+        
+        height: 50px;
+        width:  200px;
+    }
 
-    padding-inline: $button-padding;
+
+    // Button fill
+    &.btn-primary {
+        @include btn-type(color(primary));
+    }
     
-    height: 50px;
-	width:  200px;
+    &.btn-secondary {
+        @include btn-type(color(secondary));
+    }
+    
+    &.btn-accent {
+        @include btn-type(color(accent));
+    }
+    
+    &.btn-default {
+        @include btn-type(color(default));
+    }
+    
+    &.btn-success {
+        @include btn-type(color(success));
+    }
+    
+    &.btn-warning {
+        @include btn-type(color(warning));
+    }
+    
+    &.btn-danger {
+        @include btn-type(color(danger));
+    }
+
+
+    // Button type
+    &.type-default {
+        justify-content: center;
+
+        i {
+            display: none;
+        }
+    }
+
+    &.type-icon-left {
+        flex-direction: row;
+
+        i {
+            margin-right: $icon-margin;
+            margin-left: $icon-margin/3;
+        }
+    }
+
+    &.type-icon-right {
+        flex-direction: row-reverse;
+
+        i {
+            margin-left: $icon-margin;
+            margin-right: $icon-margin/3;
+        }
+    }
+
+    &.type-icon-only {
+        font-size: 0;
+        justify-content: center;
+
+        i {
+            font-size: initial;
+        }
+    }
 }
 
-// Button fill
-// Iterating colors_label array to conditionnally set colors
-@for $i from 1 through length($colors_label) {
-	.color-#{nth($colors_label, $i)}.fill-fill {
-		background-color: nth($colors, $i);
-		border: 1px solid #ffffff;
-	}
-
-	.color-#{nth($colors_label, $i)}.fill-border {
-		background-color: #ffffff;
-		border: 1px solid nth($colors, $i);
-	}
-
-	.color-#{nth($colors_label, $i)}.fill-ghost {
-		background-color: transparent;
-		border: 1px solid nth($colors, $i);
-	}
-}
 
 
-// Button type
-button.type-default {
-	justify-content: center;
 
-	i {
-		display: none;
-	}
-}
 
-button.type-icon-left {
-	flex-direction: row;
 
-	i {
-        margin-right: $icon-margin;
-        margin-left: $icon-margin/3;
-	}
-}
 
-button.type-icon-right {
-	flex-direction: row-reverse;
-
-	i {
-        margin-left: $icon-margin;
-        margin-right: $icon-margin/3;
-	}
-}
-
-button.type-icon-only {
-	font-size: 0;
-	justify-content: center;
-
-	i {
-		font-size: initial;
-	}
-}
-
-// Button shape
-button.shape-strict {
-	border-radius: $button-shape-strict;
-}
-
-button.shape-rounded {
-	border-radius: $button-shape-rounded;
-}
-
-button.shape-round {
-	border-radius: $button-shape-round;
-}
-
-// Button state
-button.state-default {
-	border-radius: $button-shape-round;
-}
-
-button.state-active {
-	border-radius: $button-shape-round;
-}
-
-button.state-pressed {
-	border-radius: $button-shape-round;
-}
-
-button.state-focus {
-	border-radius: $button-shape-round;
-}
-
-button.state-hover {
-	border-radius: $button-shape-round;
-}

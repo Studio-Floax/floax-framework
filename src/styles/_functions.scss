@@ -1,12 +1,18 @@
-@function ui-color($name, $variation) {
-    $values: map-get($ui, $name);
+@function color($name) {
+    $value: map-get($colors, $name);
+
+    @return $value;
+} 
+
+@function text-color($name, $variation) {
+    $values: map-get($neutrals, $name);
     $value: map-get($values, $variation);
     $variable: --ion-color-#{$name}-#{$variation};
 
     @return var(#{$variable}, $value);
-} 
+}  
 
-@function neutrals-color($name, $variation) {
+@function state-color($name, $variation) {
     $values: map-get($neutrals, $name);
     $value: map-get($values, $variation);
     $variable: --ion-color-#{$name}-#{$variation};

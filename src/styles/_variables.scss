@@ -1,1 +1,22 @@
 $navbar-heigh: 50px;
+
+// Button colors
+$button-color-primary:   #29A5FD;
+$button-color-secondary: #54C128;
+$button-color-accent:    #aa88bb;
+$button-color-default:   #7b4f92;
+$button-color-success:   #54C128;
+$button-color-info:      #2D81FF;
+$button-color-warning:   #FFC802;
+$button-color-danger:    #FF493F;
+
+$colors: (
+    primary: $button-color-primary,
+    secondary: $button-color-secondary,
+    accent: $button-color-accent,
+    default: $button-color-default,
+    success: $button-color-success,
+    info: $button-color-info,
+    warning: $button-color-warning,
+    danger: $button-color-danger
+);
