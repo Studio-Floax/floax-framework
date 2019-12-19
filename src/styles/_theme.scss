@@ -42,11 +42,16 @@ $neutrals: (
 $darken-value: 12;
 $lighten-value: 10;
 
-$primary:           #45AB23 !default;
-$secondary:         #FDA432 !default;
-$accent:            #3dc2ff !default;
+$primary:           #EE4266 !default;
+$secondary:         #65B8E5 !default;
+$accent:            #0E77FF !default;
+$default:           #A5A59B !default;
+$success:           #00E096 !default;
+$info:              #0095FF !default;
+$warning:           #FFAA00 !default;
+$danger:            #FF523D !default;
 
-$ui: (
+$colors: (
     primary: (
         base:             $primary,
         contrast:         neutrals-color(light, base),
@@ -64,5 +69,35 @@ $ui: (
         contrast:         neutrals-color(light, base),
         shade:            darken($accent, $darken-value),
         tint:             lighten($accent, $lighten-value)
+    ),
+    default: (
+        base:             $default,
+        contrast:         neutrals-color(light, base),
+        shade:            darken($default, $darken-value),
+        tint:             lighten($default, $lighten-value)
+    ),
+    success: (
+        base:             $success,
+        contrast:         neutrals-color(light, base),
+        shade:            darken($success, $darken-value),
+        tint:             lighten($success, $lighten-value)
+    ),
+    info: (
+        base:             $info,
+        contrast:         neutrals-color(light, base),
+        shade:            darken($info, $darken-value),
+        tint:             lighten($info, $lighten-value)
+    ),
+    warning: (
+        base:             $warning,
+        contrast:         neutrals-color(light, base),
+        shade:            darken($warning, $darken-value),
+        tint:             lighten($warning, $lighten-value)
+    ),
+    danger: (
+        base:             $danger,
+        contrast:         neutrals-color(light, base),
+        shade:            darken($danger, $darken-value),
+        tint:             lighten($danger, $lighten-value)
     )
 );

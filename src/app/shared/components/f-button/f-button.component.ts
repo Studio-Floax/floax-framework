@@ -12,8 +12,6 @@ export class FButtonComponent implements OnInit {
   @Input() private color: string;
   @Input() private fill: string;
   @Input() private type: string;
-  @Input() private shape: string;
-  @Input() private state: string;
   
   constructor() { }
 

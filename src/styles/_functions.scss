@@ -1,8 +1,10 @@
-@function color($name) {
-    $value: map-get($colors, $name);
-
+@function color($keys...) {
+    $value: $colors;
+    @each $key in $keys {
+        $value: map-get($value, $key);
+    }
     @return $value;
-} 
+}
 
 @function text-color($name, $variation) {
     $values: map-get($neutrals, $name);

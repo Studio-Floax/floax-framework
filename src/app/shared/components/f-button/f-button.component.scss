@@ -4,6 +4,7 @@
 $button-padding: 5px;
 $icon-margin:    20%;
 
+// Mixins
 @mixin btn-type($color) {
     &.fill-fill {
         background-color: $color;
@@ -71,55 +72,61 @@ $icon-margin:    20%;
         }
     }
 }
-
-    
+ 
 // Properties
 button {
     &.btn {
         display:         flex;
-        justify-content: flex-start;
+        justify-content: center;
         align-items:     center;
-    
         border: none;
         border-radius: 5px;
-        
-        font-size:   1.5rem;
+        font-size:   1.3rem;
         font-weight: 200;
-        
         padding-inline: $button-padding;
-        
         height: 50px;
         width:  200px;
+
+        //Default
+        i {
+            display: none;
+        }
+        @include btn-type(color(default, base));
+
     }
 
-
+    
     // Button fill
     &.btn-primary {
-        @include btn-type(color(primary));
+        @include btn-type(color(primary, base));
     }
     
     &.btn-secondary {
-        @include btn-type(color(secondary));
+        @include btn-type(color(secondary, base));
     }
     
     &.btn-accent {
-        @include btn-type(color(accent));
+        @include btn-type(color(accent, base));
     }
     
     &.btn-default {
-        @include btn-type(color(default));
+        @include btn-type(color(default, base));
     }
     
     &.btn-success {
-        @include btn-type(color(success));
+        @include btn-type(color(success, base));
+    }
+
+    &.btn-info {
+        @include btn-type(color(info, base));
     }
     
     &.btn-warning {
-        @include btn-type(color(warning));
+        @include btn-type(color(warning, base));
     }
     
     &.btn-danger {
-        @include btn-type(color(danger));
+        @include btn-type(color(danger, base));
     }
 
 
@@ -136,6 +143,7 @@ button {
         flex-direction: row;
 
         i {
+            display: flex;
             margin-right: $icon-margin;
             margin-left: $icon-margin/3;
         }
@@ -145,6 +153,7 @@ button {
         flex-direction: row-reverse;
 
         i {
+            display: flex;
             margin-left: $icon-margin;
             margin-right: $icon-margin/3;
         }
@@ -155,6 +164,7 @@ button {
         justify-content: center;
 
         i {
+            display: flex;
             font-size: initial;
         }
     }
