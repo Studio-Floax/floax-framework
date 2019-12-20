@@ -1,0 +1,136 @@
+@import "src/styles/main";
+
+// Mixins
+
+@mixin input-status($color) {
+    &.fill-ghost {
+        transition: 0.3s;
+
+        &:hover {
+            border-color: $color;
+            cursor: text;
+            transition: 0.3s;
+            transition-timing-function: ease-in;
+        }
+    
+        &:focus {
+            border-color: $color;
+            transition: 0.3s;
+        }
+
+        &:focus {
+            border-color: $color;
+            transition: 0.3s;
+            outline: none;
+        }
+    }
+
+    &.fill-border {
+        border-color: $color;
+        transition: 0.3s;
+        
+        &:hover {
+            border-color: darken($color, $darken-value);
+            cursor: text;
+            transition: 0.3s;
+            transition-timing-function: ease-in;
+        }
+    
+        &:focus {
+            border-color: $color;
+            transition: 0.3s;
+        }
+    }
+}
+
+
+div.input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    font-family: system-ui;
+
+    &.align-left {
+        align-items: flex-start;
+
+        .input-wrapper {
+            align-items: flex-start;
+        }
+    }
+
+    &.align-right {
+        align-items: flex-end;
+
+        .input-wrapper {
+            align-items: flex-end;
+        }
+    }
+
+    label {
+        margin-bottom: 5px;
+    }
+
+    .input-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        input.input {
+            display: none;
+        }
+
+        input.format-text  {
+            display: flex;
+            height: 30px;
+            width: 350px;
+            border: solid 1px lighten($grey, $lighten-value);
+            border-radius: 3px;
+            background-color: #f7f9fc;
+            text-indent: 10px;
+            font-weight: 500;
+            
+            // Input fill
+            &.input-primary {
+                @include input-status(color(primary, base));
+            }
+    
+            &.input-secondary {
+                @include input-status(color(secondary, base));
+            }
+    
+            &.input-accent {
+                @include input-status(color(accent, base));
+            }
+    
+            &.input-default {
+                @include input-status(color(default, base));
+            }
+    
+            &.input-success {
+                @include input-status(color(success, base));
+            }
+    
+            &.input-info {
+                @include input-status(color(info, base));
+            }
+    
+            &.input-warning {
+                @include input-status(color(warning, base));
+            }
+    
+            &.input-danger {
+                @include input-status(color(danger, base));
+            }
+        }
+
+        small {
+            color: lighten($grey, $lighten-value);
+            margin-top: 5px;
+            text-indent: 5px;
+            font-size: 0.7rem;
+        }
+    }
+}
+
