@@ -17,7 +17,7 @@ export class FInputComponent implements OnInit {
   @Input() private placeholder: string;
   @Input() private label: string;
   @Input() private caption: string;
-  @Input() private pattern: string;
+  @Input() private pattern: string = '{}';
   @Input() private title: string;
   @Input() private checked: boolean;
   @Input() private disabled: boolean;
