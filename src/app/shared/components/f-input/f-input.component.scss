@@ -14,7 +14,7 @@
         }
 
         &:focus {
-            border-color: $color;
+            border-color: darken($color, $darken-value);
             transition: 0.3s;
             outline: none;
         }
@@ -36,7 +36,7 @@
         }
     
         &:focus {
-            border-color: $color;
+            border-color: darken($color, $darken-value);
             transition: 0.3s;
         }
 
@@ -49,12 +49,15 @@
 @mixin checkbox-status($color) {
     &:after {
         content: "\2713";
+        color: transparent;
     }
 
     &:disabled:checked {
         &:after {
-            color: $grey;
+            color: $light;
         }
+        background: darken($light, $lighten-value);
+        border-color: darken($light, $lighten-value);
     }
     
     &:enabled {
@@ -67,8 +70,13 @@
     
             // Unchecked
             &:hover {
-                background-color: darken($light, $darken-value);
                 border-color: $color;
+                transition: 0.3s;
+                transition-timing-function: ease-in-out;
+            }
+
+            &:active {
+                border-color: darken($color, $darken-value);
                 transition: 0.3s;
                 transition-timing-function: ease-in-out;
             }
@@ -95,7 +103,6 @@
     
             // Unchecked
             &:hover {
-                // background-color: darken($light, $darken-value);
                 border-color: darken($color, $darken-value);
                 transition: 0.3s;
                 transition-timing-function: ease-in-out;
@@ -113,6 +120,68 @@
                 &:hover {
                     transition: 0.3s;
                     transition-timing-function: ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+@mixin radio-status($color) {
+    &:disabled:checked {
+        color: darken($light, $darken-value);
+        background-color: darken($light, $darken-value);  
+    }
+    
+    &:enabled {
+        &.fill-ghost {
+            transition: 0.3s;
+    
+            // Unchecked
+            &:hover {
+                border-color: $color;
+                transition: 0.3s;
+                transition-timing-function: ease;
+            }
+    
+            // Checked
+            &:checked {
+                background-color: $color;
+                border: $color;
+                
+                &:after {
+                    color: $light;
+                }
+    
+                &:hover {
+                    transition: 0.3s;
+                    transition-timing-function: ease;
+                }
+            }
+        }
+    
+        &.fill-border {
+            transition: 0.3s;
+            border-color: $color;
+    
+            // Unchecked
+            &:hover {
+                border-color: darken($color, $darken-value);
+                transition: 0.3s;
+                transition-timing-function: ease;
+            }
+    
+            // Checked
+            &:checked {
+                background-color: $color;
+                border: $color;
+                
+                &:after {
+                    color: $light;
+                }
+    
+                &:hover {
+                    transition: 0.3s;
+                    transition-timing-function: ease;
                 }
             }
         }
@@ -246,6 +315,50 @@ div.input-container {
         
                 &.input-danger {
                     @include checkbox-status(color(danger, base));
+                }
+
+            }
+
+            &[type="radio"] {
+                appearance: none;
+                display: flex;
+                height: 15px;
+                width: 15px;
+                border: solid 1px darken($light, $darken-value);
+                border-radius: 100%;
+                background-color: #f7f9fc;
+
+                // Input fill
+                &.input-primary {
+                    @include radio-status(color(primary, base));
+                }
+        
+                &.input-secondary {
+                    @include radio-status(color(secondary, base));
+                }
+        
+                &.input-accent {
+                    @include radio-status(color(accent, base));
+                }
+        
+                &.input-default {
+                    @include radio-status(color(default, base));
+                }
+        
+                &.input-success {
+                    @include radio-status(color(success, base));
+                }
+        
+                &.input-info {
+                    @include radio-status(color(info, base));
+                }
+        
+                &.input-warning {
+                    @include radio-status(color(warning, base));
+                }
+        
+                &.input-danger {
+                    @include radio-status(color(danger, base));
                 }
 
             }
