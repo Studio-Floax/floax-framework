@@ -47,57 +47,74 @@
 }
 
 @mixin checkbox-status($color) {
-    &.fill-ghost {
-        transition: 0.3s;
-
-        // Unchecked
-        &:after {
-            content: "\2713";
-            color: transparent;
-        }
-
-        &:hover {
-            background-color: darken($light, $darken-value);
-            cursor: pointer;
-            transition: 0.3s;
-            transition-timing-function: ease-out;
-        }
-
-        // Checked
-        &:checked {
-            background-color: $color;
-            
-            &:after {
-                color: $light;
-            }
-
-            &:hover {
-                background-color: darken($color, $darken-value);
-                cursor: pointer;
-                transition: 0.3s;
-                transition-timing-function: ease-out;
-            }
-        }
+    &:after {
+        content: "\2713";
     }
 
-    &.fill-border {
-        border-color: $color;
-        transition: 0.3s;
-        
-        &:hover {
-            border-color: darken($color, $darken-value);
-            cursor: text;
-            transition: 0.3s;
-            transition-timing-function: ease-in;
+    &:disabled:checked {
+        &:after {
+            color: $grey;
+        }
+    }
+    
+    &:enabled {
+        &:after {
+            color: transparent;
         }
     
-        &:focus {
-            border-color: $color;
+        &.fill-ghost {
             transition: 0.3s;
+    
+            // Unchecked
+            &:hover {
+                background-color: darken($light, $darken-value);
+                border-color: $color;
+                transition: 0.3s;
+                transition-timing-function: ease-in-out;
+            }
+    
+            // Checked
+            &:checked {
+                background-color: $color;
+                border: $color;
+                
+                &:after {
+                    color: $light;
+                }
+    
+                &:hover {
+                    transition: 0.3s;
+                    transition-timing-function: ease-in-out;
+                }
+            }
         }
-
-        &:checked {
-            background: $color;
+    
+        &.fill-border {
+            transition: 0.3s;
+            border-color: $color;
+    
+            // Unchecked
+            &:hover {
+                // background-color: darken($light, $darken-value);
+                border-color: darken($color, $darken-value);
+                transition: 0.3s;
+                transition-timing-function: ease-in-out;
+            }
+    
+            // Checked
+            &:checked {
+                background-color: $color;
+                border: $color;
+                
+                &:after {
+                    color: $light;
+                }
+    
+                &:hover {
+                    transition: 0.3s;
+                    transition-timing-function: ease-in-out;
+                }
+            }
         }
     }
 }
@@ -108,6 +125,22 @@ div.input-container {
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
+
+    &.align-row {
+        flex-direction: row;
+    }
+
+    &.align-column {
+        flex-direction: column;
+    }
+
+    &.align-row-reverse {
+        flex-direction: row-reverse;
+    }
+
+    &.align-column-reverse {
+        flex-direction: column-reverse;
+    }
 
     label {
         margin-bottom: 5px;
@@ -171,7 +204,6 @@ div.input-container {
             }
 
             
-
             &[type="checkbox"] {
                 appearance: none;
                 display: flex;
