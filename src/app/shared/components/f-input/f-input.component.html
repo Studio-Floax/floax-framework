@@ -1,8 +1,18 @@
 
 <div class="input-container align-{{align}}">
-    <label for="{{id}}-id">{{label}}</label>
+    <label for="{{id}}-id">{{input_values.label}}</label>
     <div class="input-wrapper">
-        <input id="{{id}}-id" name="{{name}}" type="{{format}}" pattern="{{pattern}}" title="{{title}}" class="input input-{{type}} fill-{{fill}}" value="{{value}}" placeholder="{{placeholder}}" disabled="{{disabled}}" checked="{{checked}}" required="{{required}}">
-        <small>{{caption}}</small>
+        <input id="{{id}}-id" 
+               name="{{input_types.name}}" 
+               type="{{input_types.type}}" 
+               pattern="{{input_types.pattern}}" 
+               title="{{input_values.title}}" 
+               class="input input-{{input_style.status}} fill-{{input_style.fill}}" 
+               value="{{input_values.value}}" 
+               placeholder="{{input_values.placeholder}}" 
+               disabled="{{disabled}}" 
+               checked="{{checked}}" 
+               required="{{required}}">
+        <small>{{input_values.caption}}</small>
     </div>    
 </div>
