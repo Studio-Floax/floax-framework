@@ -91,8 +91,14 @@ button {
         i {
             display: none;
         }
+
         @include btn-type(color(default, base));
 
+    }
+
+    //Style of ng-content
+    :host ::ng-deep i {
+        display: none;
     }
 
     
@@ -127,46 +133,6 @@ button {
     
     &.btn-danger {
         @include btn-type(color(danger, base));
-    }
-
-
-    // Button type
-    &.type-default {
-        justify-content: center;
-
-        i {
-            display: none;
-        }
-    }
-
-    &.type-icon-left {
-        flex-direction: row;
-
-        i {
-            display: flex;
-            margin-right: $icon-margin;
-            margin-left: $icon-margin/3;
-        }
-    }
-
-    &.type-icon-right {
-        flex-direction: row-reverse;
-
-        i {
-            display: flex;
-            margin-left: $icon-margin;
-            margin-right: $icon-margin/3;
-        }
-    }
-
-    &.type-icon-only {
-        font-size: 0;
-        justify-content: center;
-
-        i {
-            display: flex;
-            font-size: initial;
-        }
     }
 }
 

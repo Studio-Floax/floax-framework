@@ -38,11 +38,10 @@ export class FInputComponent implements OnInit {
   @Input() private input_types: {} = {
     'name': 'input',
     'type': 'text',
-    'pattern': '{}'
   }
 
-  @Input() private input_style: {} = {
-    'status': 'secondary',
+  @Input() private input_styles: {} = {
+    'level': 'secondary',
     'fill': 'border'
   }
 

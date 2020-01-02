@@ -7,11 +7,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FButtonComponent implements OnInit {
 
-  @Input() private icon: string;
-  @Input() private text: string;
-  @Input() private color: string;
-  @Input() private fill: string;
-  @Input() private type: string;
+  // @Input() private level: string;
+  // @Input() private fill: string;
+
+  @Input() private button_values: {} = {
+    'level': 'secondary',
+    'fill': 'border'
+  }
   
   constructor() { }
 

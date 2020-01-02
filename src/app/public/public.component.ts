@@ -20,11 +20,10 @@ export class PublicComponent {
   inputTypes = {
     'name': 'input',
     'type': 'text',
-    'pattern': '{}'
   }
 
-  inputStyle = {
-    'status': 'secondary',
+  inputStyles = {
+    'level': 'secondary',
     'fill': 'border'
   }
 }
