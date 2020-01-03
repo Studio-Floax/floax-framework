@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FInputComponent implements OnInit {
 
-  @Input() private id: string;
+  @Input() id: string;
 
   /* @Input() private name: string;
   @Input() private format: string = "text";
@@ -17,9 +17,9 @@ export class FInputComponent implements OnInit {
   // @Input() private fill: string;
   //@Input() private align: string;
   
-  @Input() private checked: boolean;
-  @Input() private disabled: boolean;
-  @Input() private required: boolean;
+  @Input() checked: boolean;
+  @Input() disabled: boolean;
+  @Input() required: boolean;
 
   /* @Input() private label: string;
   @Input() private placeholder: string;
@@ -27,7 +27,7 @@ export class FInputComponent implements OnInit {
   @Input() private caption: string;
   @Input() private title: string; */
 
-  @Input() private input_values: {} = {
+  @Input() input_values = {
     'label': null,
     'placeholder': null,
     'value': null,
@@ -35,12 +35,12 @@ export class FInputComponent implements OnInit {
     'title': null
   }
 
-  @Input() private input_types: {} = {
+  @Input() input_types = {
     'name': 'input',
     'type': 'text',
   }
 
-  @Input() private input_styles: {} = {
+  @Input() input_styles = {
     'level': 'secondary',
     'fill': 'border'
   }

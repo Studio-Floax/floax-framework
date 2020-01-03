@@ -11,7 +11,9 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
-    "types": ["node"],
+    "types": [
+      "node"
+    ],
     "typeRoots": [
       "node_modules/@types",
       "node_modules/@types/node"
@@ -19,7 +21,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "floax-framework": [
+        "dist/floax-framework"
+      ],
+      "floax-framework/*": [
+        "dist/floax-framework/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

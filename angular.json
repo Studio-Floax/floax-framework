@@ -125,6 +125,41 @@
           }
         }
       }
+    },
+    "floax-framework": {
+      "projectType": "library",
+      "root": "projects/floax-framework",
+      "sourceRoot": "projects/floax-framework/src",
+      "prefix": "f",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/floax-framework/tsconfig.lib.json",
+            "project": "projects/floax-framework/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/floax-framework/src/test.ts",
+            "tsConfig": "projects/floax-framework/tsconfig.spec.json",
+            "karmaConfig": "projects/floax-framework/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/floax-framework/tsconfig.lib.json",
+              "projects/floax-framework/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
-  "defaultProject": "nebula"
+  "defaultProject": "floax"
 }

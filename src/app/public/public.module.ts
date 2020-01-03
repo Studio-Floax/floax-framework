@@ -17,7 +17,7 @@ import { SharedModule } from '../shared/shared.module';
     BrowserModule,
     CommonModule,
     PublicRoutingModule,
-    SharedModule
+    SharedModule,
   ]
 })
 export class PublicModule { }
