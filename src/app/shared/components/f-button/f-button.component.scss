@@ -108,10 +108,21 @@ $icon-margin:    20%;
 
     font-size: 1.3rem;
 }
+
+@mixin btn-size($padding, $font){
+    width: auto;
+    padding: $padding;
+
+    font-size: $font;
+}
  
 
-:host ::ng-deep i {
-    margin: 10px;
+:host ::ng-deep .icon-start {
+    margin-right: 5px;
+}
+
+:host ::ng-deep .icon-end {
+    margin-left: 5px;
 }
 
 // Properties
@@ -128,12 +139,6 @@ button {
         
         @include btn-type(color(default, base));
     }
-
-    //Style of ng-content
-    :host ::ng-deep i {
-        display: none;
-    }
-
     
     // Button fill
     &.btn-primary {
@@ -170,14 +175,14 @@ button {
 
     // Button Size
     &.size-s {
-        @include btn-size-s();
+        @include btn-size(0 10px, 12px);
     }
 
     &.size-m {
-        @include btn-size-m();
+        @include btn-size(5px 15px, 14px);
     }
 
     &.size-l {
-        @include btn-size-l();
+        @include btn-size(10px 20px, 16px);
     }
 }
