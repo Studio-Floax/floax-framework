@@ -11,6 +11,7 @@ export class FButtonComponent implements OnInit {
   // @Input() private fill: string;
 
   @Input() private button_values: {} = {
+    'size': 's',
     'level': 'secondary',
     'fill': 'border'
   }

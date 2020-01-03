@@ -10,21 +10,25 @@ $icon-margin:    20%;
         background-color: $color;
         border: 1px solid $color;
         transition: 0.3s;
+        transition-timing-function: ease;
 
         &:hover {
             background-color: transparent;
             cursor: pointer;
             transition: 0.3s;
+            transition-timing-function: ease;
         }
 
         &:focus {
             background-color: $color;
             transition: 0.3s;
+            transition-timing-function: ease;
         }
 
         &:active {
             background-color: $color;
             transition: 0.3s;
+            transition-timing-function: ease;
         }
     }
 
@@ -32,21 +36,25 @@ $icon-margin:    20%;
         background-color: transparent;
         border: 1px solid $color;
         transition: 0.3s;
+        transition-timing-function: ease;
         
         &:hover {
             background-color: $color;
             cursor: pointer;
             transition: 0.3s;
+            transition-timing-function: ease;
         }
 
         &:focus {
             background-color: transparent;
             transition: 0.3s;
+            transition-timing-function: ease;
         }
 
         &:active {
             background-color: transparent;
             transition: 0.3s;
+            transition-timing-function: ease;
         }
     }
 
@@ -54,25 +62,58 @@ $icon-margin:    20%;
         background-color: transparent;
         border: 1px solid transparent;
         transition: 0.3s;
+        transition-timing-function: ease;
 
         &:hover {
             border: 1px solid $color;
             cursor: pointer;
             transition: 0.3s;
+            transition-timing-function: ease;
         }
 
         &:focus {
             border: 1px solid $color;
             transition: 0.3s;
+            transition-timing-function: ease;
         }
 
         &:active {
             background-color: $color;
             transition: 0.3s;
+            transition-timing-function: ease;
         }
     }
 }
+
+@mixin btn-size-s {
+    height: 20px;
+    width: auto;
+    padding: 7px 15px;
+
+    font-size: 0.8rem;
+}
+
+@mixin btn-size-m {
+    height: 35px;
+    width: auto;
+    padding: 7px 15px;
+
+    font-size: 1rem;
+}
+
+@mixin btn-size-l {
+    height: 50px;
+    width: auto;
+    padding: 7px 15px;
+
+    font-size: 1.3rem;
+}
  
+
+:host ::ng-deep i {
+    margin: 10px;
+}
+
 // Properties
 button {
     &.btn {
@@ -84,16 +125,8 @@ button {
         font-size:   1.3rem;
         font-weight: 200;
         padding-inline: $button-padding;
-        height: 50px;
-        width:  200px;
-
-        //Default
-        i {
-            display: none;
-        }
-
+        
         @include btn-type(color(default, base));
-
     }
 
     //Style of ng-content
@@ -134,11 +167,17 @@ button {
     &.btn-danger {
         @include btn-type(color(danger, base));
     }
+
+    // Button Size
+    &.size-s {
+        @include btn-size-s();
+    }
+
+    &.size-m {
+        @include btn-size-m();
+    }
+
+    &.size-l {
+        @include btn-size-l();
+    }
 }
-
-
-
-
-
-
-
