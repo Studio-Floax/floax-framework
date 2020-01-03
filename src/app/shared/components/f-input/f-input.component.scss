@@ -1,0 +1,375 @@
+@import "src/styles/main";
+
+// Mixins
+
+@mixin input-status($color) {
+    &.fill-ghost {
+        transition: 0.3s;
+
+        &:hover {
+            border-color: $color;
+            cursor: text;
+            transition: 0.3s;
+            transition-timing-function: ease-in;
+        }
+
+        &:focus {
+            border-color: darken($color, $darken-value);
+            transition: 0.3s;
+            outline: none;
+        }
+
+        &:checked {
+            background: $color;
+        }
+    }
+
+    &.fill-border {
+        border-color: $color;
+        transition: 0.3s;
+        
+        &:hover {
+            border-color: darken($color, $darken-value);
+            cursor: text;
+            transition: 0.3s;
+            transition-timing-function: ease-in;
+        }
+    
+        &:focus {
+            border-color: darken($color, $darken-value);
+            transition: 0.3s;
+        }
+
+        &:checked {
+            background: $color;
+        }
+    }
+}
+
+@mixin checkbox-status($color) {
+    &:after {
+        content: "\2713";
+        color: transparent;
+    }
+
+    &:disabled:checked {
+        &:after {
+            color: $light;
+        }
+        background: darken($light, $lighten-value);
+        border-color: darken($light, $lighten-value);
+    }
+    
+    &:enabled {
+        &:after {
+            color: transparent;
+        }
+    
+        &.fill-ghost {
+            transition: 0.3s;
+    
+            // Unchecked
+            &:hover {
+                border-color: $color;
+                transition: 0.3s;
+                transition-timing-function: ease-in-out;
+            }
+
+            &:active {
+                border-color: darken($color, $darken-value);
+                transition: 0.3s;
+                transition-timing-function: ease-in-out;
+            }
+    
+            // Checked
+            &:checked {
+                background-color: $color;
+                border: $color;
+                
+                &:after {
+                    color: $light;
+                }
+    
+                &:hover {
+                    transition: 0.3s;
+                    transition-timing-function: ease-in-out;
+                }
+            }
+        }
+    
+        &.fill-border {
+            transition: 0.3s;
+            border-color: $color;
+    
+            // Unchecked
+            &:hover {
+                border-color: darken($color, $darken-value);
+                transition: 0.3s;
+                transition-timing-function: ease-in-out;
+            }
+    
+            // Checked
+            &:checked {
+                background-color: $color;
+                border: $color;
+                
+                &:after {
+                    color: $light;
+                }
+    
+                &:hover {
+                    transition: 0.3s;
+                    transition-timing-function: ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+@mixin radio-status($color) {
+    &:disabled:checked {
+        color: darken($light, $darken-value);
+        background-color: darken($light, $darken-value);  
+    }
+    
+    &:enabled {
+        &.fill-ghost {
+            transition: 0.3s;
+    
+            // Unchecked
+            &:hover {
+                border-color: $color;
+                transition: 0.3s;
+                transition-timing-function: ease;
+            }
+    
+            // Checked
+            &:checked {
+                background-color: $color;
+                border: $color;
+                
+                &:after {
+                    color: $light;
+                }
+    
+                &:hover {
+                    transition: 0.3s;
+                    transition-timing-function: ease;
+                }
+            }
+        }
+    
+        &.fill-border {
+            transition: 0.3s;
+            border-color: $color;
+    
+            // Unchecked
+            &:hover {
+                border-color: darken($color, $darken-value);
+                transition: 0.3s;
+                transition-timing-function: ease;
+            }
+    
+            // Checked
+            &:checked {
+                background-color: $color;
+                border: $color;
+                
+                &:after {
+                    color: $light;
+                }
+    
+                &:hover {
+                    transition: 0.3s;
+                    transition-timing-function: ease;
+                }
+            }
+        }
+    }
+}
+
+
+div.input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    &.align-row {
+        flex-direction: row;
+    }
+
+    &.align-column {
+        flex-direction: column;
+    }
+
+    &.align-row-reverse {
+        flex-direction: row-reverse;
+    }
+
+    &.align-column-reverse {
+        flex-direction: column-reverse;
+    }
+
+    label {
+        margin-bottom: 5px;
+    }
+
+    .input-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        input.input {
+            display: none;
+
+            &[type="text"],
+            &[type="email"],
+            &[type="number"],
+            &[type="tel"],
+            &[type="password"] {
+                display: flex;
+                height: 30px;
+                width: 350px;
+                border: solid 1px lighten($grey, $lighten-value);
+                border-radius: 3px;
+                background-color: #f7f9fc;
+                padding-left: 10px;
+                font-weight: 500;
+
+                // Input fill
+                &.input-primary {
+                    @include input-status(color(primary, base));
+                }
+        
+                &.input-secondary {
+                    @include input-status(color(secondary, base));
+                }
+        
+                &.input-accent {
+                    @include input-status(color(accent, base));
+                }
+        
+                &.input-default {
+                    @include input-status(color(default, base));
+                }
+        
+                &.input-success {
+                    @include input-status(color(success, base));
+                }
+        
+                &.input-info {
+                    @include input-status(color(info, base));
+                }
+        
+                &.input-warning {
+                    @include input-status(color(warning, base));
+                }
+        
+                &.input-danger {
+                    @include input-status(color(danger, base));
+                }
+            }
+
+            
+            &[type="checkbox"] {
+                appearance: none;
+                display: flex;
+                height: 15px;
+                width: 15px;
+                border: solid 1px lighten($grey, $lighten-value);
+                border-radius: 3px;
+                background-color: #f7f9fc;
+                font-weight: 500;
+                padding-left: 2px;
+
+                // Input fill
+                &.input-primary {
+                    @include checkbox-status(color(primary, base));
+                }
+        
+                &.input-secondary {
+                    @include checkbox-status(color(secondary, base));
+                }
+        
+                &.input-accent {
+                    @include checkbox-status(color(accent, base));
+                }
+        
+                &.input-default {
+                    @include checkbox-status(color(default, base));
+                }
+        
+                &.input-success {
+                    @include checkbox-status(color(success, base));
+                }
+        
+                &.input-info {
+                    @include checkbox-status(color(info, base));
+                }
+        
+                &.input-warning {
+                    @include checkbox-status(color(warning, base));
+                }
+        
+                &.input-danger {
+                    @include checkbox-status(color(danger, base));
+                }
+
+            }
+
+            &[type="radio"] {
+                appearance: none;
+                display: flex;
+                height: 15px;
+                width: 15px;
+                border: solid 1px darken($light, $darken-value);
+                border-radius: 100%;
+                background-color: #f7f9fc;
+
+                // Input fill
+                &.input-primary {
+                    @include radio-status(color(primary, base));
+                }
+        
+                &.input-secondary {
+                    @include radio-status(color(secondary, base));
+                }
+        
+                &.input-accent {
+                    @include radio-status(color(accent, base));
+                }
+        
+                &.input-default {
+                    @include radio-status(color(default, base));
+                }
+        
+                &.input-success {
+                    @include radio-status(color(success, base));
+                }
+        
+                &.input-info {
+                    @include radio-status(color(info, base));
+                }
+        
+                &.input-warning {
+                    @include radio-status(color(warning, base));
+                }
+        
+                &.input-danger {
+                    @include radio-status(color(danger, base));
+                }
+
+            }
+        }
+
+        small {
+            color: lighten($grey, $lighten-value);
+            margin-top: 5px;
+            text-indent: 5px;
+            font-size: 0.7rem;
+        }
+    }
+}
+
