@@ -7,14 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./public.component.scss']
 })
 export class PublicComponent {
-  title = 'nebula';
+  title = 'floax';
 
   inputValues = {
-    'label': 'Label',
-    'placeholder': 'Placeholder',
-    'value': 'Value',
-    'caption': 'Caption',
-    'title': 'Title'
+    'label': 'Home',
+    'placeholder': 'This is the Home Page',
+    'value': '',
+    'caption': '',
+    'title': 'Home Page'
   }
 
   inputTypes = {
@@ -24,6 +24,6 @@ export class PublicComponent {
 
   inputStyles = {
     'level': 'secondary',
-    'fill': 'border'
+    'fill': 'ghost'
   }
 }

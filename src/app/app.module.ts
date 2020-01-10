@@ -8,6 +8,9 @@ import { SharedModule } from './shared/shared.module';
 import { AdminModule } from './admin/admin.module';
 import { PublicModule } from './public/public.module';
 
+import { ComponentsModule } from 'components';
+import { ServicesModule } from 'services';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +23,8 @@ import { PublicModule } from './public/public.module';
     AdminModule,
     PublicModule,
     SharedModule,
+    ComponentsModule,
+    ServicesModule
   ],
   bootstrap: [AppComponent]
 })

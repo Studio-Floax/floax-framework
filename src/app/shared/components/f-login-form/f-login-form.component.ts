@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
-import { LoginService } from '../../../admin/services/login.service';
+import { LoginService } from 'services';
 
 @Component({
   selector: 'f-login-form',

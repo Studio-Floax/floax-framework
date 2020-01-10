@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
-import { CanActivateRouteGuard } from '../shared/services/route-guard.service';
+import { CanActivateRouteGuard } from 'services';
 import { FAdminLoginComponent } from './components/f-admin-login/f-admin-login.component';
 
 const routes: Routes = [
