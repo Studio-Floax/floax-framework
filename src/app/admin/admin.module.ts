@@ -8,7 +8,7 @@ import { AdminComponent } from './admin.component';
 import { SharedModule } from '../shared/shared.module';
 
 //Module that authorize access to Routes
-import { CanActivateRouteGuard } from '../shared/services/route-guard.service';
+import { CanActivateRouteGuard } from 'services';
 
 
 @NgModule({

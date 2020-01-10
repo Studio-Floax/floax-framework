@@ -10,7 +10,7 @@ export class FButtonComponent implements OnInit {
   // @Input() private level: string;
   // @Input() private fill: string;
 
-  @Input() private button_values: {} = {
+  @Input() button_values = {
     'size': 'm',
     'level': 'secondary',
     'fill': 'border'

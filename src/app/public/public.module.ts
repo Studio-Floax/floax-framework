@@ -6,6 +6,8 @@ import { PublicRoutingModule, publicRoutingComponents } from './public-routing.m
 import { PublicComponent } from './public.component';
 import { SharedModule } from '../shared/shared.module';
 
+import { ComponentsModule } from 'components';
+
 
 
 @NgModule({
@@ -17,7 +19,8 @@ import { SharedModule } from '../shared/shared.module';
     BrowserModule,
     CommonModule,
     PublicRoutingModule,
-    SharedModule
+    SharedModule,
+    ComponentsModule,
   ]
 })
 export class PublicModule { }
