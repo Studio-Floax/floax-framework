@@ -1,0 +1,20 @@
+{
+  "name": "@floax/services",
+  "version": "0.0.1",
+  "description" : "A set of services to use in your application.",
+  "author": "Studio Floax",
+  "keywords": [
+    "angular",
+    "components",
+    "floax",
+    "typescript"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14"
+  },
+  "whitelistedNonPeerDependencies": [
+    "jsrsasign"
+  ]
+}

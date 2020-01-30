@@ -42,6 +42,7 @@ export class FInputComponent implements OnInit {
 
   @Input() input_styles = {
     'level': 'secondary',
+    'align': 'row',
     'fill': 'border'
   }
 

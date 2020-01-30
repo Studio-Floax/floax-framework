@@ -23,11 +23,31 @@
       "dom"
     ],
     "paths": {
-      "floax-framework": [
-        "dist/floax-framework"
+      "@floax/components": [
+        "dist/floax/components",
+        "dist/floax/components"
       ],
-      "floax-framework/*": [
-        "dist/floax-framework/*"
+      "@floax/components/*": [
+        "dist/floax/components/*",
+        "dist/floax/components/*"
+      ],
+      "floax-components": [
+        "dist/floax-components"
+      ],
+      "floax-components/*": [
+        "dist/floax-components/*"
+      ],
+      "components": [
+        "dist/components"
+      ],
+      "components/*": [
+        "dist/components/*"
+      ],
+      "services": [
+        "dist/services"
+      ],
+      "services/*": [
+        "dist/services/*"
       ]
     }
   },
