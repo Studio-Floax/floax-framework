@@ -9,46 +9,23 @@ export class FInputComponent implements OnInit {
 
   @Input() id: string;
 
-  /* @Input() private name: string;
-  @Input() private format: string = "text";
-  @Input() private pattern: string = '{}'; */
-
-  // @Input() private status: string = "primary";
-  // @Input() private fill: string;
-  //@Input() private align: string;
+  @Input() level: string;
+  @Input() fill: string = 'border';
+  @Input() align: string = 'column';
   
   @Input() checked: boolean;
   @Input() disabled: boolean;
   @Input() required: boolean;
 
-  /* @Input() private label: string;
-  @Input() private placeholder: string;
-  @Input() private value: string;
-  @Input() private caption: string;
-  @Input() private title: string; */
+  @Input() label: string;
+  @Input() placeholder: string = 'Type here';
+  @Input() value: string;
+  @Input() caption: string;
+  @Input() title: string; 
 
-  @Input() input_values = {
-    'label': null,
-    'placeholder': null,
-    'value': null,
-    'caption': null,
-    'title': null
-  }
-
-  @Input() input_types = {
-    'name': 'input',
-    'type': 'text',
-  }
-
-  @Input() input_styles = {
-    'level': 'secondary',
-    'align': 'row',
-    'fill': 'border'
-  }
-
-
-
-
+  @Input() name: string;
+  @Input() type: string = "text";
+  @Input() pattern: string; 
 
   constructor() { }
 

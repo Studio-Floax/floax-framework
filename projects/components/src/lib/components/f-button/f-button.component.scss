@@ -7,8 +7,8 @@ $icon-margin:    20%;
 // Mixins
 @mixin btn-type($color) {
     &.fill-fill {
-        background-color: color($colors, $color, 500);
-        border: 1px solid color($colors, $color, 500);
+        background-color: $color;
+        border: 1px solid $color;
         transition: 0.3s;
         transition-timing-function: ease;
 
@@ -20,13 +20,13 @@ $icon-margin:    20%;
         }
 
         &:focus {
-            background-color: color($colors, $color, 500);
+            background-color: $color;
             transition: 0.3s;
             transition-timing-function: ease;
         }
 
         &:active {
-            background-color: color($colors, $color, 500);
+            background-color: $color;
             transition: 0.3s;
             transition-timing-function: ease;
         }
@@ -34,12 +34,12 @@ $icon-margin:    20%;
 
     &.fill-border {
         background-color: transparent;
-        border: 1px solid color($colors, $color, 500);
+        border: 1px solid $color;
         transition: 0.3s;
         transition-timing-function: ease;
         
         &:hover {
-            background-color: color($colors, $color, 500);
+            background-color: $color;
             cursor: pointer;
             transition: 0.3s;
             transition-timing-function: ease;
@@ -65,20 +65,20 @@ $icon-margin:    20%;
         transition-timing-function: ease;
 
         &:hover {
-            border: 1px solid color($colors, $color, 500);
+            border: 1px solid $color;
             cursor: pointer;
             transition: 0.3s;
             transition-timing-function: ease;
         }
 
         &:focus {
-            border: 1px solid color($colors, $color, 500);
+            border: 1px solid $color;
             transition: 0.3s;
             transition-timing-function: ease;
         }
 
         &:active {
-            background-color: color($colors, $color, 500);
+            background-color: $color;
             transition: 0.3s;
             transition-timing-function: ease;
         }
@@ -113,36 +113,32 @@ button {
         font-weight: 200;
         padding-inline: $button-padding;
         
-        @include btn-type(neutral);
+        @include btn-type(color($colors, neutral, 400));
     }
     
     // Button fill
     &.btn-primary {
-        @include btn-type(sky);
+        @include btn-type(color($colors, sky, 500));
     }
     
     &.btn-secondary {
-        @include btn-type(sun);
+        @include btn-type(color($colors, sun, 500));
     }
     
     &.btn-accent {
-        @include btn-type(mars);
-    }
-    
-    &.btn-default {
-        @include btn-type(neutral);
+        @include btn-type(color($colors, mars, 500));
     }
     
     &.btn-success {
-        @include btn-type(success);
+        @include btn-type(color($colors, success, 500));
     }
     
     &.btn-warning {
-        @include btn-type(warning);
+        @include btn-type(color($colors, warning, 500));
     }
     
     &.btn-danger {
-        @include btn-type(danger);
+        @include btn-type(color($colors, danger, 500));
     }
 
     // Button Size

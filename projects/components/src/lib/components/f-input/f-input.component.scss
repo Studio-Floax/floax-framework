@@ -14,7 +14,7 @@
         }
 
         &:focus {
-            border-color: color($colors, $color, 700);
+            border-color: color($colors, $color, 600);
             transition: 0.3s;
             outline: none;
         }
@@ -29,14 +29,14 @@
         transition: 0.3s;
         
         &:hover {
-            border-color: color($colors, $color, 700);
+            border-color: color($colors, $color, 600);
             cursor: text;
             transition: 0.3s;
             transition-timing-function: ease-in;
         }
     
         &:focus {
-            border-color: color($colors, $color, 700);
+            border-color: color($colors, $color, 600);
             transition: 0.3s;
         }
 
@@ -76,7 +76,7 @@
             }
 
             &:active {
-                border-color: color($colors, $color, 700);
+                border-color: color($colors, $color, 600);
                 transition: 0.3s;
                 transition-timing-function: ease-in-out;
             }
@@ -103,7 +103,7 @@
     
             // Unchecked
             &:hover {
-                border-color: color($colors, $color, 700);
+                border-color: color($colors, $color, 600);
                 transition: 0.3s;
                 transition-timing-function: ease-in-out;
             }
@@ -165,7 +165,7 @@
     
             // Unchecked
             &:hover {
-                border-color: color($colors, $color, 700);
+                border-color: color($colors, $color, 600);
                 transition: 0.3s;
                 transition-timing-function: ease;
             }
@@ -251,10 +251,6 @@ div.input-container {
                     @include input-status(mars);
                 }
         
-                &.input-default {
-                    @include input-status(neutral);
-                }
-        
                 &.input-success {
                     @include input-status(success);
                 }
@@ -293,10 +289,6 @@ div.input-container {
                     @include checkbox-status(mars);
                 }
         
-                &.input-default {
-                    @include checkbox-status(neutral);
-                }
-        
                 &.input-success {
                     @include checkbox-status(success);
                 }
@@ -331,10 +323,6 @@ div.input-container {
         
                 &.input-accent {
                     @include radio-status(mars);
-                }
-        
-                &.input-default {
-                    @include radio-status(neutral);
                 }
         
                 &.input-success {
