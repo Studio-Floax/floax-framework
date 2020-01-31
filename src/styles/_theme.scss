@@ -1,103 +1,157 @@
-// THEMINGS INFORMATIONS
-// -------------------------------------------------------------------------------------------
-// Color map should provide
-// - base: main color to be used.
-// - contrast: Color that will provide readable text against the base color
-// - shade: 12% darker version of the base color (mix with black)
-// - tint: 10% lighter version of the base color (mix with white)
-//
-// EXAMPLE OF USE
-// - base primary
-//         background-color: ui-colors(primary, base)
-//         color: ui-colors(primary, contrast)
-// - hover secondary
-//         background-color: ui-colors(primary, shade)         
-//
-
-// NEUTRALS COLORS
-// -------------------------------------------------------------------------------------------
-$dark: #333333;
-$grey: #707070;
-$light: #ffffff;
-
-$neutrals: (
-    dark: (
-        base: #333333,
-        light: #555555,
-        deep: #222222
-    ),
-    grey: (
-        base: #707070,
-        light: #909090,
-        deep: #505050
-    ),
-    light: (
-        base: #FFFFFF
-    )
-);
 
 // UI COLORS
+//
+// You are free to edit the 'values' map to customize your colors
+//
 // -------------------------------------------------------------------------------------------
 
-$darken-value: 12;
-$lighten-value: 10;
-
-$primary:           #EE4266 !default;
-$secondary:         #65B8E5 !default;
-$accent:            #0E77FF !default;
-$default:           #A5A59B !default;
-$success:           #00E096 !default;
-$info:              #0095FF !default;
-$warning:           #FFAA00 !default;
-$danger:            #FF523D !default;
-
-$colors: (
-    primary: (
-        base:             $primary,
-        contrast:         neutrals-color(light, base),
-        shade:            darken($primary, $darken-value),
-        tint:             lighten($primary, $lighten-value)
+$values: (
+    sky: (
+        hue: 205,
+        saturation: 98,
+        light: 60
     ),
-    secondary: (
-        base:             $secondary,
-        contrast:         neutrals-color(dark, base),
-        shade:            darken($secondary, $darken-value),
-        tint:             lighten($secondary, $lighten-value)
+    sun: (
+        hue: 26,
+        saturation: 95,
+        light: 70
     ),
-    accent: (
-        base:             $accent,
-        contrast:         neutrals-color(light, base),
-        shade:            darken($accent, $darken-value),
-        tint:             lighten($accent, $lighten-value)
+    mars: (
+        hue: 347,
+        saturation: 83,
+        light: 60
     ),
-    default: (
-        base:             $default,
-        contrast:         neutrals-color(light, base),
-        shade:            darken($default, $darken-value),
-        tint:             lighten($default, $lighten-value)
+    astro: (
+        hue: 229,
+        saturation: 61,
+        light: 50
     ),
     success: (
-        base:             $success,
-        contrast:         neutrals-color(light, base),
-        shade:            darken($success, $darken-value),
-        tint:             lighten($success, $lighten-value)
-    ),
-    info: (
-        base:             $info,
-        contrast:         neutrals-color(light, base),
-        shade:            darken($info, $darken-value),
-        tint:             lighten($info, $lighten-value)
+        hue: 160,
+        saturation: 100,
+        light: 50
     ),
     warning: (
-        base:             $warning,
-        contrast:         neutrals-color(light, base),
-        shade:            darken($warning, $darken-value),
-        tint:             lighten($warning, $lighten-value)
+        hue: 40,
+        saturation: 100,
+        light: 50
     ),
     danger: (
-        base:             $danger,
-        contrast:         neutrals-color(light, base),
-        shade:            darken($danger, $darken-value),
-        tint:             lighten($danger, $lighten-value)
+        hue: 6,
+        saturation: 100,
+        light: 62
+    ),
+    neutral: (
+        hue: 230,
+        saturation: 15,
+        light: 70
     )
 );
+
+
+$colors: (
+    sky: (
+        0   : hsl(color($values, sky, hue), color($values, sky, saturation), 98),
+        100 : hsl(color($values, sky, hue), color($values, sky, saturation), color($values, sky, light) + 35),
+        200 : hsl(color($values, sky, hue), color($values, sky, saturation), color($values, sky, light) + 30),
+        300 : hsl(color($values, sky, hue), color($values, sky, saturation), color($values, sky, light) + 25),
+        400 : hsl(color($values, sky, hue), color($values, sky, saturation), color($values, sky, light) + 20),
+        500 : hsl(color($values, sky, hue), color($values, sky, saturation), color($values, sky, light)),
+        600 : hsl(color($values, sky, hue), color($values, sky, saturation), color($values, sky, light) - 20),
+        700 : hsl(color($values, sky, hue), color($values, sky, saturation), color($values, sky, light) - 25),
+        800 : hsl(color($values, sky, hue), color($values, sky, saturation), color($values, sky, light) - 30),
+        900 : hsl(color($values, sky, hue), color($values, sky, saturation), color($values, sky, light) - 35),
+        1000: hsl(color($values, sky, hue), color($values, sky, saturation), 10)
+    ),
+    sun: (
+        0   : hsl(color($values, sun, hue), color($values, sun, saturation), 98),
+        100 : hsl(color($values, sun, hue), color($values, sun, saturation), color($values, sun, light) + 35),
+        200 : hsl(color($values, sun, hue), color($values, sun, saturation), color($values, sun, light) + 30),
+        300 : hsl(color($values, sun, hue), color($values, sun, saturation), color($values, sun, light) + 25),
+        400 : hsl(color($values, sun, hue), color($values, sun, saturation), color($values, sun, light) + 20),
+        500 : hsl(color($values, sun, hue), color($values, sun, saturation), color($values, sun, light)),
+        600 : hsl(color($values, sun, hue), color($values, sun, saturation), color($values, sun, light) - 20),
+        700 : hsl(color($values, sun, hue), color($values, sun, saturation), color($values, sun, light) - 25),
+        800 : hsl(color($values, sun, hue), color($values, sun, saturation), color($values, sun, light) - 30),
+        900 : hsl(color($values, sun, hue), color($values, sun, saturation), color($values, sun, light) - 35),
+        1000: hsl(color($values, sun, hue), color($values, sun, saturation), 10)
+    ),
+    mars: (
+        0   : hsl(color($values, mars, hue), color($values, mars, saturation), 98),
+        100 : hsl(color($values, mars, hue), color($values, mars, saturation), color($values, mars, light) + 35),
+        200 : hsl(color($values, mars, hue), color($values, mars, saturation), color($values, mars, light) + 30),
+        300 : hsl(color($values, mars, hue), color($values, mars, saturation), color($values, mars, light) + 25),
+        400 : hsl(color($values, mars, hue), color($values, mars, saturation), color($values, mars, light) + 20),
+        500 : hsl(color($values, mars, hue), color($values, mars, saturation), color($values, mars, light)),
+        600 : hsl(color($values, mars, hue), color($values, mars, saturation), color($values, mars, light) - 20),
+        700 : hsl(color($values, mars, hue), color($values, mars, saturation), color($values, mars, light) - 25),
+        800 : hsl(color($values, mars, hue), color($values, mars, saturation), color($values, mars, light) - 30),
+        900 : hsl(color($values, mars, hue), color($values, mars, saturation), color($values, mars, light) - 35),
+        1000: hsl(color($values, mars, hue), color($values, mars, saturation), 10)
+    ),
+    astro: (
+        0   : hsl(color($values, astro, hue), color($values, astro, saturation), 98),
+        100 : hsl(color($values, astro, hue), color($values, astro, saturation), color($values, astro, light) + 35),
+        200 : hsl(color($values, astro, hue), color($values, astro, saturation), color($values, astro, light) + 30),
+        300 : hsl(color($values, astro, hue), color($values, astro, saturation), color($values, astro, light) + 25),
+        400 : hsl(color($values, astro, hue), color($values, astro, saturation), color($values, astro, light) + 20),
+        500 : hsl(color($values, astro, hue), color($values, astro, saturation), color($values, astro, light)),
+        600 : hsl(color($values, astro, hue), color($values, astro, saturation), color($values, astro, light) - 20),
+        700 : hsl(color($values, astro, hue), color($values, astro, saturation), color($values, astro, light) - 25),
+        800 : hsl(color($values, astro, hue), color($values, astro, saturation), color($values, astro, light) - 30),
+        900 : hsl(color($values, astro, hue), color($values, astro, saturation), color($values, astro, light) - 35),
+        1000: hsl(color($values, astro, hue), color($values, astro, saturation), 10)
+    ),
+    success: (
+        0   : hsl(color($values, success, hue), color($values, success, saturation), 98),
+        100 : hsl(color($values, success, hue), color($values, success, saturation), color($values, success, light) + 35),
+        200 : hsl(color($values, success, hue), color($values, success, saturation), color($values, success, light) + 30),
+        300 : hsl(color($values, success, hue), color($values, success, saturation), color($values, success, light) + 25),
+        400 : hsl(color($values, success, hue), color($values, success, saturation), color($values, success, light) + 20),
+        500 : hsl(color($values, success, hue), color($values, success, saturation), color($values, success, light)),
+        600 : hsl(color($values, success, hue), color($values, success, saturation), color($values, success, light) - 20),
+        700 : hsl(color($values, success, hue), color($values, success, saturation), color($values, success, light) - 25),
+        800 : hsl(color($values, success, hue), color($values, success, saturation), color($values, success, light) - 30),
+        900 : hsl(color($values, success, hue), color($values, success, saturation), color($values, success, light) - 35),
+        1000: hsl(color($values, success, hue), color($values, success, saturation), 10)
+    ),
+    warning: (
+        0   : hsl(color($values, warning, hue), color($values, warning, saturation), 98),
+        100 : hsl(color($values, warning, hue), color($values, warning, saturation), color($values, warning, light) + 35),
+        200 : hsl(color($values, warning, hue), color($values, warning, saturation), color($values, warning, light) + 30),
+        300 : hsl(color($values, warning, hue), color($values, warning, saturation), color($values, warning, light) + 25),
+        400 : hsl(color($values, warning, hue), color($values, warning, saturation), color($values, warning, light) + 20),
+        500 : hsl(color($values, warning, hue), color($values, warning, saturation), color($values, warning, light)),
+        600 : hsl(color($values, warning, hue), color($values, warning, saturation), color($values, warning, light) - 20),
+        700 : hsl(color($values, warning, hue), color($values, warning, saturation), color($values, warning, light) - 25),
+        800 : hsl(color($values, warning, hue), color($values, warning, saturation), color($values, warning, light) - 30),
+        900 : hsl(color($values, warning, hue), color($values, warning, saturation), color($values, warning, light) - 35),
+        1000: hsl(color($values, warning, hue), color($values, warning, saturation), 10)
+    ),
+    danger: (
+        0   : hsl(color($values, danger, hue), color($values, danger, saturation), 98),
+        100 : hsl(color($values, danger, hue), color($values, danger, saturation), color($values, danger, light) + 35),
+        200 : hsl(color($values, danger, hue), color($values, danger, saturation), color($values, danger, light) + 30),
+        300 : hsl(color($values, danger, hue), color($values, danger, saturation), color($values, danger, light) + 25),
+        400 : hsl(color($values, danger, hue), color($values, danger, saturation), color($values, danger, light) + 20),
+        500 : hsl(color($values, danger, hue), color($values, danger, saturation), color($values, danger, light)),
+        600 : hsl(color($values, danger, hue), color($values, danger, saturation), color($values, danger, light) - 20),
+        700 : hsl(color($values, danger, hue), color($values, danger, saturation), color($values, danger, light) - 25),
+        800 : hsl(color($values, danger, hue), color($values, danger, saturation), color($values, danger, light) - 30),
+        900 : hsl(color($values, danger, hue), color($values, danger, saturation), color($values, danger, light) - 35),
+        1000: hsl(color($values, danger, hue), color($values, danger, saturation), 10)
+    ),
+    neutral: (
+        100 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) + 30),
+        200 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) + 27),
+        300 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) + 24),
+        400 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) + 20),
+        500 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light)),
+        600 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) - 45),
+        700 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) - 50),
+        800 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) - 55),
+        900 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) - 60),
+        1000: hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) - 65)
+    ),
+);
+

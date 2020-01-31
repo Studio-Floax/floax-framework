@@ -7,41 +7,41 @@
         transition: 0.3s;
 
         &:hover {
-            border-color: $color;
+            border-color: color($colors, $color, 500);
             cursor: text;
             transition: 0.3s;
             transition-timing-function: ease-in;
         }
 
         &:focus {
-            border-color: darken($color, $darken-value);
+            border-color: color($colors, $color, 700);
             transition: 0.3s;
             outline: none;
         }
 
         &:checked {
-            background: $color;
+            background: color($colors, $color, 500);
         }
     }
 
     &.fill-border {
-        border-color: $color;
+        border-color: color($colors, $color, 500);
         transition: 0.3s;
         
         &:hover {
-            border-color: darken($color, $darken-value);
+            border-color: color($colors, $color, 700);
             cursor: text;
             transition: 0.3s;
             transition-timing-function: ease-in;
         }
     
         &:focus {
-            border-color: darken($color, $darken-value);
+            border-color: color($colors, $color, 700);
             transition: 0.3s;
         }
 
         &:checked {
-            background: $color;
+            background: color($colors, $color, 500);
         }
     }
 }
@@ -54,10 +54,10 @@
 
     &:disabled:checked {
         &:after {
-            color: $light;
+            color: color($colors, neutral, 100);
         }
-        background: darken($light, $lighten-value);
-        border-color: darken($light, $lighten-value);
+        background: color($colors, neutral, 300);
+        border-color: color($colors, neutral, 300);
     }
     
     &:enabled {
@@ -70,24 +70,24 @@
     
             // Unchecked
             &:hover {
-                border-color: $color;
+                border-color: color($colors, $color, 500);
                 transition: 0.3s;
                 transition-timing-function: ease-in-out;
             }
 
             &:active {
-                border-color: darken($color, $darken-value);
+                border-color: color($colors, $color, 700);
                 transition: 0.3s;
                 transition-timing-function: ease-in-out;
             }
     
             // Checked
             &:checked {
-                background-color: $color;
-                border: $color;
+                background-color: color($colors, $color, 500);
+                border: color($colors, $color, 500);
                 
                 &:after {
-                    color: $light;
+                    color: color($colors, neutral, 100);
                 }
     
                 &:hover {
@@ -99,22 +99,22 @@
     
         &.fill-border {
             transition: 0.3s;
-            border-color: $color;
+            border-color: color($colors, $color, 500);
     
             // Unchecked
             &:hover {
-                border-color: darken($color, $darken-value);
+                border-color: color($colors, $color, 700);
                 transition: 0.3s;
                 transition-timing-function: ease-in-out;
             }
     
             // Checked
             &:checked {
-                background-color: $color;
-                border: $color;
+                background-color: color($colors, $color, 500);
+                border: color($colors, $color, 500);
                 
                 &:after {
-                    color: $light;
+                    color: color($colors, neutral, 100);
                 }
     
                 &:hover {
@@ -128,8 +128,8 @@
 
 @mixin radio-status($color) {
     &:disabled:checked {
-        color: darken($light, $darken-value);
-        background-color: darken($light, $darken-value);  
+        color: color($colors, neutral, 300);
+        background-color: color($colors, neutral, 300);  
     }
     
     &:enabled {
@@ -138,18 +138,18 @@
     
             // Unchecked
             &:hover {
-                border-color: $color;
+                border-color: color($colors, $color, 500);
                 transition: 0.3s;
                 transition-timing-function: ease;
             }
     
             // Checked
             &:checked {
-                background-color: $color;
-                border: $color;
+                background-color: color($colors, $color, 500);
+                border: color($colors, $color, 500);
                 
                 &:after {
-                    color: $light;
+                    color: color($colors, neutral, 100);
                 }
     
                 &:hover {
@@ -161,22 +161,22 @@
     
         &.fill-border {
             transition: 0.3s;
-            border-color: $color;
+            border-color: color($colors, $color, 500);
     
             // Unchecked
             &:hover {
-                border-color: darken($color, $darken-value);
+                border-color: color($colors, $color, 700);
                 transition: 0.3s;
                 transition-timing-function: ease;
             }
     
             // Checked
             &:checked {
-                background-color: $color;
-                border: $color;
+                background-color: color($colors, $color, 500);
+                border: color($colors, $color, 500);
                 
                 &:after {
-                    color: $light;
+                    color: color($colors, neutral, 100);
                 }
     
                 &:hover {
@@ -232,43 +232,39 @@ div.input-container {
                 display: flex;
                 height: 30px;
                 width: 350px;
-                border: solid 1px lighten($grey, $lighten-value);
+                border: solid 1px color($colors, neutral, 400);
                 border-radius: 3px;
-                background-color: #f7f9fc;
+                background-color: color($colors, neutral, 100);
                 padding-left: 10px;
                 font-weight: 500;
 
                 // Input fill
                 &.input-primary {
-                    @include input-status(color(primary, base));
+                    @include input-status(sky);
                 }
         
                 &.input-secondary {
-                    @include input-status(color(secondary, base));
+                    @include input-status(sun);
                 }
         
                 &.input-accent {
-                    @include input-status(color(accent, base));
+                    @include input-status(mars);
                 }
         
                 &.input-default {
-                    @include input-status(color(default, base));
+                    @include input-status(neutral);
                 }
         
                 &.input-success {
-                    @include input-status(color(success, base));
-                }
-        
-                &.input-info {
-                    @include input-status(color(info, base));
+                    @include input-status(success);
                 }
         
                 &.input-warning {
-                    @include input-status(color(warning, base));
+                    @include input-status(warning);
                 }
         
                 &.input-danger {
-                    @include input-status(color(danger, base));
+                    @include input-status(danger);
                 }
             }
 
@@ -278,43 +274,39 @@ div.input-container {
                 display: flex;
                 height: 15px;
                 width: 15px;
-                border: solid 1px lighten($grey, $lighten-value);
+                border: solid 1px color($colors, neutral, 400);
                 border-radius: 3px;
-                background-color: #f7f9fc;
+                background-color: color($colors, neutral, 100);
                 font-weight: 500;
                 padding-left: 2px;
 
                 // Input fill
                 &.input-primary {
-                    @include checkbox-status(color(primary, base));
+                    @include checkbox-status(sky);
                 }
         
                 &.input-secondary {
-                    @include checkbox-status(color(secondary, base));
+                    @include checkbox-status(sun);
                 }
         
                 &.input-accent {
-                    @include checkbox-status(color(accent, base));
+                    @include checkbox-status(mars);
                 }
         
                 &.input-default {
-                    @include checkbox-status(color(default, base));
+                    @include checkbox-status(neutral);
                 }
         
                 &.input-success {
-                    @include checkbox-status(color(success, base));
-                }
-        
-                &.input-info {
-                    @include checkbox-status(color(info, base));
+                    @include checkbox-status(success);
                 }
         
                 &.input-warning {
-                    @include checkbox-status(color(warning, base));
+                    @include checkbox-status(warning);
                 }
         
                 &.input-danger {
-                    @include checkbox-status(color(danger, base));
+                    @include checkbox-status(danger);
                 }
 
             }
@@ -324,48 +316,44 @@ div.input-container {
                 display: flex;
                 height: 15px;
                 width: 15px;
-                border: solid 1px darken($light, $darken-value);
+                border: solid 1px color($colors, neutral, 400);
                 border-radius: 100%;
-                background-color: #f7f9fc;
+                background-color: color($colors, neutral, 100);
 
                 // Input fill
                 &.input-primary {
-                    @include radio-status(color(primary, base));
+                    @include radio-status(sky);
                 }
         
                 &.input-secondary {
-                    @include radio-status(color(secondary, base));
+                    @include radio-status(sun);
                 }
         
                 &.input-accent {
-                    @include radio-status(color(accent, base));
+                    @include radio-status(mars);
                 }
         
                 &.input-default {
-                    @include radio-status(color(default, base));
+                    @include radio-status(neutral);
                 }
         
                 &.input-success {
-                    @include radio-status(color(success, base));
-                }
-        
-                &.input-info {
-                    @include radio-status(color(info, base));
+                    @include radio-status(success);
                 }
         
                 &.input-warning {
-                    @include radio-status(color(warning, base));
+                    @include radio-status(warning);
                 }
         
                 &.input-danger {
-                    @include radio-status(color(danger, base));
+                    @include radio-status(danger);
                 }
 
             }
         }
 
         small {
-            color: lighten($grey, $lighten-value);
+            color: color($colors, neutral, 400);
             margin-top: 5px;
             text-indent: 5px;
             font-size: 0.7rem;

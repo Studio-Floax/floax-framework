@@ -26,4 +26,9 @@ export class PublicComponent {
     'level': 'secondary',
     'fill': 'ghost'
   }
+  button_values = {
+    'size': 'l',
+    'level': 'accent',
+    'fill': 'border'
+  }
 }

@@ -1,31 +1,6 @@
-@function color($keys...) {
-    $value: $colors;
+@function color($map, $keys...) {
     @each $key in $keys {
-        $value: map-get($value, $key);
+        $map: map-get($map, $key);
     }
-    @return $value;
+    @return $map;
 }
-
-@function neutrals($keys...) {
-    $value: $neutrals;
-    @each $key in $keys {
-        $value: map-get($value, $key);
-    }
-    @return $value;
-}
-
-@function text-color($name, $variation) {
-    $values: map-get($neutrals, $name);
-    $value: map-get($values, $variation);
-    $variable: --ion-color-#{$name}-#{$variation};
-
-    @return var(#{$variable}, $value);
-}  
-
-@function state-color($name, $variation) {
-    $values: map-get($neutrals, $name);
-    $value: map-get($values, $variation);
-    $variable: --ion-color-#{$name}-#{$variation};
-
-    @return var(#{$variable}, $value);
-}  
