@@ -9,3 +9,4 @@ export * from './lib/components.module';
 // Export Components
 export * from './lib/components/f-button/f-button.component';
 export * from './lib/components/f-input/f-input.component';
+export * from './lib/components/f-label/f-label.component';
