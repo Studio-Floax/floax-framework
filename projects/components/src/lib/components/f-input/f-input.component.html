@@ -1,16 +1,16 @@
 <div class="input-container align-{{align}}">
     <label for="{{id}}-id">{{label}}</label>
-    <div class="input-wrapper">
+    <div class="input-wrapper input-{{level}} fill-{{fill}} type-{{type}}">
         <input id="{{id}}-id" 
-               name="{{name}}" 
-               type="{{type}}" 
-               title="{{title}}" 
-               class="input input-{{level}} fill-{{fill}}" 
-               value="{{value}}" 
-               placeholder="{{placeholder}}" 
-               disabled="{{disabled}}" 
-               checked="{{checked}}" 
-               required="{{required}}">
-        <small>{{caption}}</small>
+        name="{{name}}" 
+        type="{{type}}" 
+        title="{{title}}" 
+        class="input input-{{level}} fill-{{fill}}"
+        value="{{value}}" 
+        placeholder="{{placeholder}}" 
+        disabled="{{disabled}}" 
+        checked="{{checked}}" 
+        required="{{required}}">
+        <i class="eva eva-{{icon}}"></i>
     </div>    
 </div>

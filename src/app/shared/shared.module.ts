@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { ComponentsModule } from 'components';
+
 import { FLoginFormComponent } from './components/f-login-form/f-login-form.component';
 
 @NgModule({
@@ -12,6 +14,7 @@ import { FLoginFormComponent } from './components/f-login-form/f-login-form.comp
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    ComponentsModule
   ],
   exports: [
     FLoginFormComponent

@@ -20,8 +20,9 @@ export class FInputComponent implements OnInit {
   @Input() label: string;
   @Input() placeholder: string = 'Type here';
   @Input() value: string;
-  @Input() caption: string;
-  @Input() title: string; 
+  @Input() title: string;
+  @Input() icon: string; 
+
 
   @Input() name: string;
   @Input() type: string = "text";

@@ -1,201 +1,133 @@
 @import "src/styles/main";
 
 // Mixins
-
 @mixin input-status($color) {
-    &.fill-ghost {
-        transition: 0.3s;
+    &.fill-ghost,
+    &.fill-border {
+        transition: 0.3 ease-in-out;
 
         &:hover {
             border-color: color($colors, $color, 500);
             cursor: text;
-            transition: 0.3s;
-            transition-timing-function: ease-in;
+            transition: 0.3s ease-in-out;
         }
 
-        &:focus {
+        &:focus-within {
             border-color: color($colors, $color, 600);
-            transition: 0.3s;
             outline: none;
-        }
-
-        &:checked {
-            background: color($colors, $color, 500);
         }
     }
 
     &.fill-border {
         border-color: color($colors, $color, 500);
-        transition: 0.3s;
-        
-        &:hover {
-            border-color: color($colors, $color, 600);
-            cursor: text;
-            transition: 0.3s;
-            transition-timing-function: ease-in;
-        }
-    
-        &:focus {
-            border-color: color($colors, $color, 600);
-            transition: 0.3s;
-        }
-
-        &:checked {
-            background: color($colors, $color, 500);
-        }
     }
 }
 
 @mixin checkbox-status($color) {
-    &:after {
-        content: "\2713";
-        color: transparent;
-    }
-
-    &:disabled:checked {
-        &:after {
-            color: color($colors, neutral, 100);
-        }
-        background: color($colors, neutral, 300);
-        border-color: color($colors, neutral, 300);
-    }
-    
     &:enabled {
-        &:after {
-            color: transparent;
-        }
-    
-        &.fill-ghost {
-            transition: 0.3s;
-    
+        &.fill-ghost,
+        &.fill-border {
+            transition: 0.3s ease-in-out;
+
             // Unchecked
             &:hover {
                 border-color: color($colors, $color, 500);
-                transition: 0.3s;
-                transition-timing-function: ease-in-out;
+                transition: 0.3s ease-in-out;
             }
 
             &:active {
                 border-color: color($colors, $color, 600);
-                transition: 0.3s;
-                transition-timing-function: ease-in-out;
+                transition: 0.3s ease-in-out;
             }
-    
+
             // Checked
             &:checked {
                 background-color: color($colors, $color, 500);
-                border: color($colors, $color, 500);
-                
+                border-color: color($colors, $color, 500);
+                transition: 0.3s ease-in-out;
+
                 &:after {
                     color: color($colors, neutral, 100);
-                }
-    
-                &:hover {
-                    transition: 0.3s;
-                    transition-timing-function: ease-in-out;
+                    transition: 0.3s ease-in-out;
                 }
             }
         }
-    
+
         &.fill-border {
-            transition: 0.3s;
             border-color: color($colors, $color, 500);
-    
-            // Unchecked
-            &:hover {
-                border-color: color($colors, $color, 600);
-                transition: 0.3s;
-                transition-timing-function: ease-in-out;
-            }
-    
-            // Checked
-            &:checked {
-                background-color: color($colors, $color, 500);
-                border: color($colors, $color, 500);
-                
-                &:after {
-                    color: color($colors, neutral, 100);
-                }
-    
-                &:hover {
-                    transition: 0.3s;
-                    transition-timing-function: ease-in-out;
-                }
+        }
+    }
+
+    &:disabled {
+        border-color: color($colors, neutral, 400);
+
+        &:checked {
+            background: color($colors, neutral, 400);
+
+            &:after {
+                color: color($colors, neutral, 100);
             }
         }
     }
 }
 
 @mixin radio-status($color) {
-    &:disabled:checked {
-        color: color($colors, neutral, 300);
-        background-color: color($colors, neutral, 300);  
-    }
-    
     &:enabled {
-        &.fill-ghost {
-            transition: 0.3s;
-    
+        &.fill-ghost,
+        &.fill-border {
+            transition: 0.3s ease-in-out;
+
             // Unchecked
             &:hover {
                 border-color: color($colors, $color, 500);
-                transition: 0.3s;
-                transition-timing-function: ease;
+                transition: 0.3s ease-in-out;
             }
-    
+
             // Checked
             &:checked {
                 background-color: color($colors, $color, 500);
-                border: color($colors, $color, 500);
-                
-                &:after {
-                    color: color($colors, neutral, 100);
-                }
-    
+                border-color: color($colors, $color, 500);
+
                 &:hover {
-                    transition: 0.3s;
-                    transition-timing-function: ease;
+                    transition: 0.3s ease-in-out;
                 }
             }
         }
-    
+
         &.fill-border {
-            transition: 0.3s;
             border-color: color($colors, $color, 500);
-    
-            // Unchecked
+            transition: 0.3s ease-in-out;
+
             &:hover {
-                border-color: color($colors, $color, 600);
-                transition: 0.3s;
-                transition-timing-function: ease;
+                background-color: color($colors, $color, 100);
+                transition: 0.3s ease-in-out;
             }
-    
-            // Checked
+
             &:checked {
                 background-color: color($colors, $color, 500);
-                border: color($colors, $color, 500);
-                
-                &:after {
-                    color: color($colors, neutral, 100);
-                }
-    
-                &:hover {
-                    transition: 0.3s;
-                    transition-timing-function: ease;
-                }
             }
+        }
+    }
+
+    &:disabled {
+        border-color: color($colors, neutral, 400);
+
+        &:checked {
+            background-color: color($colors, neutral, 400);
         }
     }
 }
 
-
 div.input-container {
+    align-items: flex-start;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: flex-start;
+
+    width: 100%;
 
     &.align-row {
+        align-items: center;
         flex-direction: row;
     }
 
@@ -204,6 +136,7 @@ div.input-container {
     }
 
     &.align-row-reverse {
+        align-items: center;
         flex-direction: row-reverse;
     }
 
@@ -211,18 +144,70 @@ div.input-container {
         flex-direction: column-reverse;
     }
 
-    label {
-        margin-bottom: 5px;
-    }
-
     .input-wrapper {
+        align-items: center;
         display: flex;
-        flex-direction: column;
         justify-content: space-between;
-        align-items: flex-start;
+
+        transition: 0.3s ease-in-out;
+
+        width: min-content;
+
+        // Input type text style
+        &.type-text,
+        &.type-email,
+        &.type-number,
+        &.type-tel,
+        &.type-password {
+            background-color: color($colors, neutral, 100);
+            border: solid 1px color($colors, neutral, 400);
+            border-radius: 3px;
+
+            &:hover {
+                border-color: color($colors, neutral, 600);
+                cursor: text;
+                transition: 0.3s ease-in-out;
+            }
+
+            &:focus-within {
+                border-color: color($colors, neutral, 600);
+                outline: none;
+                transition: 0.3s ease-in-out;
+            }
+
+            // Text Input Fill
+            &.input-primary {
+                @include input-status(sky);
+            }
+
+            &.input-secondary {
+                @include input-status(sun);
+            }
+
+            &.input-accent {
+                @include input-status(mars);
+            }
+
+            &.input-success {
+                @include input-status(success);
+            }
+
+            &.input-warning {
+                @include input-status(warning);
+            }
+
+            &.input-danger {
+                @include input-status(danger);
+			}
+			
+			i {
+				margin: 0 5px;
+			}
+        }
 
         input.input {
             display: none;
+            width: 100%;
 
             &[type="text"],
             &[type="email"],
@@ -230,122 +215,137 @@ div.input-container {
             &[type="tel"],
             &[type="password"] {
                 display: flex;
+
+                border: none;
+                outline: none;
+
+                font-weight: 500;
+
                 height: 30px;
                 width: 350px;
-                border: solid 1px color($colors, neutral, 400);
-                border-radius: 3px;
-                background-color: color($colors, neutral, 100);
-                padding-left: 10px;
-                font-weight: 500;
 
-                // Input fill
-                &.input-primary {
-                    @include input-status(sky);
-                }
-        
-                &.input-secondary {
-                    @include input-status(sun);
-                }
-        
-                &.input-accent {
-                    @include input-status(mars);
-                }
-        
-                &.input-success {
-                    @include input-status(success);
-                }
-        
-                &.input-warning {
-                    @include input-status(warning);
-                }
-        
-                &.input-danger {
-                    @include input-status(danger);
-                }
+                padding-left: 10px;
             }
 
-            
             &[type="checkbox"] {
-                appearance: none;
-                display: flex;
+				align-items: center;
+				display: flex;
+
+				appearance: none;
+
+				background-color: color($colors, neutral, 100);
+				
+				border: solid 1px color($colors, neutral, 500);
+				border-radius: 3px;
+				
+				font-weight: 500;
+
+				padding-left: 2px;
+				
                 height: 15px;
                 width: 15px;
-                border: solid 1px color($colors, neutral, 400);
-                border-radius: 3px;
-                background-color: color($colors, neutral, 100);
-                font-weight: 500;
-                padding-left: 2px;
 
-                // Input fill
+                // Defaut Checkbox Style
+                &:after {
+					content: "\2713";
+                    color: transparent;
+                }
+
+                &:hover {
+                    transition: 0.3s ease-in-out;
+                }
+
+                &:active {
+                    transition: 0.3s ease-in-out;
+                }
+
+                &:checked {
+					background-color: color($colors, neutral, 500);
+                    transition: 0.3s ease-in-out;
+
+                    &:after {
+						color: color($colors, neutral, 100);
+                        transition: 0.3s ease-in-out;
+                    }
+                }
+
+                // Checkbox Fill
                 &.input-primary {
                     @include checkbox-status(sky);
                 }
-        
+
                 &.input-secondary {
                     @include checkbox-status(sun);
                 }
-        
+
                 &.input-accent {
                     @include checkbox-status(mars);
                 }
-        
+
                 &.input-success {
                     @include checkbox-status(success);
                 }
-        
+
                 &.input-warning {
                     @include checkbox-status(warning);
                 }
-        
+
                 &.input-danger {
                     @include checkbox-status(danger);
                 }
-
             }
 
             &[type="radio"] {
-                appearance: none;
-                display: flex;
-                height: 15px;
-                width: 15px;
-                border: solid 1px color($colors, neutral, 400);
-                border-radius: 100%;
-                background-color: color($colors, neutral, 100);
+				appearance: none;
 
-                // Input fill
+				display: flex;
+
+				background-color: color($colors, neutral, 100);
+
+				border: solid 1px color($colors, neutral, 500);
+                border-radius: 100%;
+
+				height: 15px;
+				width: 15px;
+                
+                // Default Radio Style
+                &:hover {
+                    transition: 0.3s ease-in-out;
+                }
+
+                &:checked {
+                    background-color: color($colors, neutral, 500);
+
+                    &:hover {
+                        transition: 0.3s ease-in-out;
+                    }
+                }
+
+                // Radio Button Fill
                 &.input-primary {
                     @include radio-status(sky);
                 }
-        
+
                 &.input-secondary {
                     @include radio-status(sun);
                 }
-        
+
                 &.input-accent {
                     @include radio-status(mars);
                 }
-        
+
                 &.input-success {
                     @include radio-status(success);
                 }
-        
+
                 &.input-warning {
                     @include radio-status(warning);
                 }
-        
+
                 &.input-danger {
                     @include radio-status(danger);
                 }
-
             }
-        }
-
-        small {
-            color: color($colors, neutral, 400);
-            margin-top: 5px;
-            text-indent: 5px;
-            font-size: 0.7rem;
         }
     }
 }
-
