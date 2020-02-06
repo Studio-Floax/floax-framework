@@ -129,6 +129,7 @@ div.input-container {
     &.align-row {
         align-items: center;
         flex-direction: row;
+        justify-content: flex-start;
     }
 
     &.align-column {
@@ -138,6 +139,7 @@ div.input-container {
     &.align-row-reverse {
         align-items: center;
         flex-direction: row-reverse;
+        justify-content: flex-end;
     }
 
     &.align-column-reverse {

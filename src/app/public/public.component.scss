@@ -2,7 +2,8 @@
 
 .buttons,
 .inputs,
-.checkboxes {
+.checkboxes,
+.labels {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
