@@ -2,96 +2,80 @@
 
 // Variables
 $button-padding: 5px;
-$icon-margin:    20%;
+$icon-margin: 20%;
 
 // Mixins
 @mixin btn-type($color) {
-    &.fill-fill {
+    &.fill-fill,
+    &.fill-border,
+    &.fill-ghost {
         background-color: $color;
         border: 1px solid $color;
-        transition: 0.3s;
-        transition-timing-function: ease;
+        transition: 0.3s ease-in-out;
 
         &:hover {
             background-color: transparent;
             cursor: pointer;
-            transition: 0.3s;
-            transition-timing-function: ease;
+            transition: 0.3s ease-in-out;
         }
 
         &:focus {
             background-color: $color;
-            transition: 0.3s;
-            transition-timing-function: ease;
+            transition: 0.3s ease-in-out;
         }
 
         &:active {
             background-color: $color;
-            transition: 0.3s;
-            transition-timing-function: ease;
+            transition: 0.3 ease-in-out;
         }
     }
 
     &.fill-border {
         background-color: transparent;
-        border: 1px solid $color;
-        transition: 0.3s;
-        transition-timing-function: ease;
-        
+        color: color($colors, neutral, 900);
+        transition: 0.3s ease-in-out;
+
         &:hover {
             background-color: $color;
-            cursor: pointer;
-            transition: 0.3s;
-            transition-timing-function: ease;
-        }
-
-        &:focus {
-            background-color: transparent;
-            transition: 0.3s;
-            transition-timing-function: ease;
+            color: color($colors, neutral, 100);
+            transition: 0.3s ease-in-out;
         }
 
         &:active {
             background-color: transparent;
-            transition: 0.3s;
-            transition-timing-function: ease;
+            transition: 0.3s ease-in-out;
         }
     }
 
     &.fill-ghost {
         background-color: transparent;
         border: 1px solid transparent;
-        transition: 0.3s;
-        transition-timing-function: ease;
+        color: color($colors, neutral, 900);
+        transition: 0.3s ease-in-out;
 
         &:hover {
             border: 1px solid $color;
             cursor: pointer;
-            transition: 0.3s;
-            transition-timing-function: ease;
+            transition: 0.3s ease-in-out;
         }
 
         &:focus {
             border: 1px solid $color;
-            transition: 0.3s;
-            transition-timing-function: ease;
+            transition: 0.3s ease-in-out;
         }
 
         &:active {
             background-color: $color;
-            transition: 0.3s;
-            transition-timing-function: ease;
+            transition: 0.3s ease-in-out;
         }
     }
 }
 
-@mixin btn-size($padding, $font){
-    width: auto;
-    padding: $padding;
-
+@mixin btn-size($padding, $font) {
     font-size: $font;
+    padding: $padding;
+    width: auto;
 }
- 
 
 :host ::ng-deep .icon-start {
     margin-right: 5px;
@@ -104,39 +88,48 @@ $icon-margin:    20%;
 // Properties
 button {
     &.btn {
-        display:         flex;
+        align-items: center;
+        display: flex;
         justify-content: center;
-        align-items:     center;
+
         border: none;
         border-radius: 5px;
-        font-size:   1.3rem;
+
+        color: color($colors, neutral, 100);
+
+        font-size: 1.3rem;
         font-weight: 200;
+
         padding-inline: $button-padding;
-        
+
         @include btn-type(color($colors, neutral, 400));
+
+        &:hover {
+            color: color($colors, neutral, 900);
+        }
     }
-    
+
     // Button fill
     &.btn-primary {
         @include btn-type(color($colors, sky, 500));
     }
-    
+
     &.btn-secondary {
         @include btn-type(color($colors, sun, 500));
     }
-    
+
     &.btn-accent {
         @include btn-type(color($colors, mars, 500));
     }
-    
+
     &.btn-success {
         @include btn-type(color($colors, success, 500));
     }
-    
+
     &.btn-warning {
         @include btn-type(color($colors, warning, 500));
     }
-    
+
     &.btn-danger {
         @include btn-type(color($colors, danger, 500));
     }
