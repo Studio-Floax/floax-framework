@@ -6,17 +6,22 @@
     color: color($colors, $color, $text);
 }
 .label-container {
+    align-items:     center;
     display:         flex;
     justify-content: center;
-    align-items:     center;
-    @include color-contrast(neutral, 200, 700);
+    
     border: none;
     border-radius: 1px;
+
     font-size:   1rem;
     font-weight: 500;
+
     padding: 2px 5px;
+
     width: fit-content;
 
+    @include color-contrast(neutral, 200, 700);
+    
     span {
         display: flex;
         flex-wrap: nowrap;
