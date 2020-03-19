@@ -45,6 +45,11 @@ $values: (
         hue: 230,
         saturation: 15,
         light: 70
+    ),
+    test: (
+        hue: 100,
+        saturation: 15,
+        light: 57
     )
 );
 
@@ -152,6 +157,18 @@ $colors: (
         800 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) - 55),
         900 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) - 60),
         1000: hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) - 65)
+    ),
+    test: (
+        100 : hsl(color($values, test, hue), color($values, test, saturation), color($values, test, light) + 30),
+        200 : hsl(color($values, test, hue), color($values, test, saturation), color($values, test, light) + 27),
+        300 : hsl(color($values, test, hue), color($values, test, saturation), color($values, test, light) + 24),
+        400 : hsl(color($values, test, hue), color($values, test, saturation), color($values, test, light) + 20),
+        500 : hsl(color($values, test, hue), color($values, test, saturation), color($values, test, light)),
+        600 : hsl(color($values, test, hue), color($values, test, saturation), color($values, test, light) - 45),
+        700 : hsl(color($values, test, hue), color($values, test, saturation), color($values, test, light) - 50),
+        800 : hsl(color($values, test, hue), color($values, test, saturation), color($values, test, light) - 55),
+        900 : hsl(color($values, test, hue), color($values, test, saturation), color($values, test, light) - 60),
+        1000: hsl(color($values, test, hue), color($values, test, saturation), color($values, test, light) - 65)
     ),
 );
 

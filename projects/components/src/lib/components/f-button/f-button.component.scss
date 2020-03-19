@@ -32,7 +32,7 @@ $icon-margin: 20%;
 
     &.fill-border {
         background-color: transparent;
-        color: color($colors, neutral, 900);
+        color: $color;
         transition: 0.3s ease-in-out;
 
         &:hover {
@@ -50,7 +50,7 @@ $icon-margin: 20%;
     &.fill-ghost {
         background-color: transparent;
         border: 1px solid transparent;
-        color: color($colors, neutral, 900);
+        color: $color;
         transition: 0.3s ease-in-out;
 
         &:hover {
@@ -95,7 +95,8 @@ button {
         border: none;
         border-radius: 5px;
 
-        color: color($colors, neutral, 100);
+        // color: color($colors, neutral, 100);
+        color: color($colors, test, 500);
 
         font-size: 1.3rem;
         font-weight: 200;
@@ -116,6 +117,10 @@ button {
 
     &.btn-secondary {
         @include btn-type(color($colors, sun, 500));
+    }
+
+    &.btn-tertiary {
+        @include btn-type(color($colors, astro, 500));
     }
 
     &.btn-accent {
