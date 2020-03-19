@@ -71,10 +71,38 @@ $icon-margin: 20%;
     }
 }
 
+@mixin btn-text($color) {
+    & {
+        color: $color;
+
+        &:hover {
+            color: black;
+        }
+    }
+};
+
 @mixin btn-size($padding, $font) {
     font-size: $font;
     padding: $padding;
     width: auto;
+}
+
+@mixin btn-colors() {
+    @each $color in $colors {
+        @each $light in nth($color, 2) {
+            &.btn-#{nth($color, 1)}-#{nth($light, 1)}{
+                @include btn-type(color($colors, nth($color, 1), nth($light, 1)));
+            }
+        }
+    }
+
+    @each $color in $colors {
+        @each $light in nth($color, 2) {
+            &.color-#{nth($color, 1)}-#{nth($light, 1)}{
+                @include btn-text(color($colors, nth($color, 1), nth($light, 1)));
+            }
+        }
+    }
 }
 
 :host ::ng-deep .icon-start {
@@ -93,10 +121,9 @@ button {
         justify-content: center;
 
         border: none;
-        border-radius: 5px;
+        border-radius: 3px;
 
-        // color: color($colors, neutral, 100);
-        color: color($colors, test, 500);
+        color: color($colors, neutral, 100);
 
         font-size: 1.3rem;
         font-weight: 200;
@@ -110,34 +137,7 @@ button {
         }
     }
 
-    // Button fill
-    &.btn-primary {
-        @include btn-type(color($colors, sky, 500));
-    }
-
-    &.btn-secondary {
-        @include btn-type(color($colors, sun, 500));
-    }
-
-    &.btn-tertiary {
-        @include btn-type(color($colors, astro, 500));
-    }
-
-    &.btn-accent {
-        @include btn-type(color($colors, mars, 500));
-    }
-
-    &.btn-success {
-        @include btn-type(color($colors, success, 500));
-    }
-
-    &.btn-warning {
-        @include btn-type(color($colors, warning, 500));
-    }
-
-    &.btn-danger {
-        @include btn-type(color($colors, danger, 500));
-    }
+    @include btn-colors();
 
     // Button Size
     &.size-s {
