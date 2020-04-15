@@ -27,10 +27,7 @@
         "projects/components/src"
       ],
       "services": [
-        "dist/services"
-      ],
-      "services/*": [
-        "dist/services/*"
+        "projects/services/src"
       ]
     }
   },
