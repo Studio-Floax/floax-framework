@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --base-href /floax/ --prod",
+    "build:libs": "ng build --project components && ng build --project services",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
