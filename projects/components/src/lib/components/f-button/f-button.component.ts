@@ -1,23 +1,21 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'f-button',
-  templateUrl: './f-button.component.html',
-  styleUrls: ['./f-button.component.scss']
+	selector: 'f-button',
+	templateUrl: './f-button.component.html',
+	styleUrls: ['./f-button.component.scss']
 })
 export class FButtonComponent implements OnInit {
 
-  @Input() size: string = 'm';
-  @Input() fill: string = 'fill';
+	@Input() size: string = 'm';
+	@Input() color: string= 'neutral';
+	@Input() level: string = 'primary';
 
-  @Input() bgColor: string;
-  @Input() textColor: string;
 
-  
-  constructor() { 
-  }
+	constructor() {
+	}
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+	}
 
 }

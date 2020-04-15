@@ -175,28 +175,20 @@ div.input-container {
 
             // Text Input Fill
             &.input-primary {
-                @include input-status(sky);
+                @include input-status(oxygen);
             }
 
             &.input-secondary {
-                @include input-status(sun);
+                @include input-status(carbon);
             }
 
             &.input-accent {
-                @include input-status(mars);
+                @include input-status(hydrogen);
             }
 
             &.input-success {
-                @include input-status(success);
+                @include input-status(nitrogen);
             }
-
-            &.input-warning {
-                @include input-status(warning);
-            }
-
-            &.input-danger {
-                @include input-status(danger);
-			}
 			
 			i {
 				margin: 0 5px;
@@ -269,27 +261,19 @@ div.input-container {
 
                 // Checkbox Fill
                 &.input-primary {
-                    @include checkbox-status(sky);
+                    @include checkbox-status(oxygen);
                 }
 
                 &.input-secondary {
-                    @include checkbox-status(sun);
+                    @include checkbox-status(carbon);
                 }
 
                 &.input-accent {
-                    @include checkbox-status(mars);
+                    @include checkbox-status(hydrogen);
                 }
 
                 &.input-success {
-                    @include checkbox-status(success);
-                }
-
-                &.input-warning {
-                    @include checkbox-status(warning);
-                }
-
-                &.input-danger {
-                    @include checkbox-status(danger);
+                    @include checkbox-status(nitrogen);
                 }
             }
 
@@ -328,27 +312,19 @@ div.input-container {
 
                 // Radio Button Fill
                 &.input-primary {
-                    @include radio-status(sky);
+                    @include radio-status(oxygen);
                 }
 
                 &.input-secondary {
-                    @include radio-status(sun);
+                    @include radio-status(carbon);
                 }
 
                 &.input-accent {
-                    @include radio-status(mars);
+                    @include radio-status(hydrogen);
                 }
 
                 &.input-success {
-                    @include radio-status(success);
-                }
-
-                &.input-warning {
-                    @include radio-status(warning);
-                }
-
-                &.input-danger {
-                    @include radio-status(danger);
+                    @include radio-status(nitrogen);
                 }
             }
         }

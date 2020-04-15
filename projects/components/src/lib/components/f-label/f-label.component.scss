@@ -30,26 +30,18 @@
     }
     
     &.level-primary {
-        @include color-contrast(sky, 100, 600);
+        @include color-contrast(oxygen, 100, 600);
     }
 
     &.level-secondary {
-        @include color-contrast(sun, 100, 600);
+        @include color-contrast(carbon, 100, 600);
     }
 
     &.level-accent {
-        @include color-contrast(mars, 100, 600);
+        @include color-contrast(hydrogen, 100, 600);
     }
 
     &.level-success {
-        @include color-contrast(success, 100, 600);
-    }
-
-    &.level-warning {
-        @include color-contrast(warning, 100, 600);
-    }
-
-    &.level-danger {
-        @include color-contrast(danger, 100, 600);
+        @include color-contrast(nitrogen, 100, 600);
     }
 }

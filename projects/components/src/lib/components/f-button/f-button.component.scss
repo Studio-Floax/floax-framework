@@ -6,80 +6,36 @@ $icon-margin: 20%;
 
 // Mixins
 @mixin btn-type($color) {
-    &.fill-fill,
-    &.fill-border,
-    &.fill-ghost {
-        background-color: $color;
-        border: 1px solid $color;
-        transition: 0.3s ease-in-out;
+    &.level-primary {
+        background-color: color($colors, $color, 500);
+        color: color($colors, $color, 0);
 
         &:hover {
-            background-color: transparent;
-            cursor: pointer;
-            transition: 0.3s ease-in-out;
-        }
-
-        &:focus {
-            background-color: $color;
-            transition: 0.3s ease-in-out;
-        }
-
-        &:active {
-            background-color: $color;
-            transition: 0.3 ease-in-out;
-        }
-    }
-
-    &.fill-border {
-        background-color: transparent;
-        color: $color;
-        transition: 0.3s ease-in-out;
-
-        &:hover {
-            background-color: $color;
+            background-color: color($colors, $color, 600);;
             color: color($colors, neutral, 100);
-            transition: 0.3s ease-in-out;
-        }
-
-        &:active {
-            background-color: transparent;
-            transition: 0.3s ease-in-out;
         }
     }
 
-    &.fill-ghost {
-        background-color: transparent;
-        border: 1px solid transparent;
-        color: $color;
-        transition: 0.3s ease-in-out;
+    &.level-secondary {
+        background-color: color($colors, $color, 200);
+        color: color($colors, $color, 600);
 
         &:hover {
-            border: 1px solid $color;
-            cursor: pointer;
-            transition: 0.3s ease-in-out;
+            background-color: color($colors, $color, 500);
+            color: color($colors, $color, 0);
         }
+    }
 
-        &:focus {
-            border: 1px solid $color;
-            transition: 0.3s ease-in-out;
-        }
+    &.level-ghost {
+        background-color: transparent;
+        color: color($colors, $color, 600);
 
-        &:active {
-            background-color: $color;
-            transition: 0.3s ease-in-out;
+        &:hover {
+            background-color: color($colors, $color, 200);
+            color: color($colors, $color, 600);
         }
     }
 }
-
-@mixin btn-text($color) {
-    & {
-        color: $color;
-
-        &:hover {
-            color: black;
-        }
-    }
-};
 
 @mixin btn-size($padding, $font) {
     font-size: $font;
@@ -89,18 +45,8 @@ $icon-margin: 20%;
 
 @mixin btn-colors() {
     @each $color in $colors {
-        @each $light in nth($color, 2) {
-            &.btn-#{nth($color, 1)}-#{nth($light, 1)}{
-                @include btn-type(color($colors, nth($color, 1), nth($light, 1)));
-            }
-        }
-    }
-
-    @each $color in $colors {
-        @each $light in nth($color, 2) {
-            &.color-#{nth($color, 1)}-#{nth($light, 1)}{
-                @include btn-text(color($colors, nth($color, 1), nth($light, 1)));
-            }
+        &.btn-#{nth($color, 1)} {
+            @include btn-type(nth($color, 1));
         }
     }
 }
@@ -123,17 +69,20 @@ button {
         border: none;
         border-radius: 3px;
 
+        background-color: color($colors, neutral, 500);
         color: color($colors, neutral, 100);
 
         font-size: 1.3rem;
         font-weight: 200;
 
         padding-inline: $button-padding;
-
-        @include btn-type(color($colors, neutral, 400));
+        transition: 0.3s ease-in-out;
 
         &:hover {
-            color: color($colors, neutral, 900);
+            background-color: color($colors, neutral, 600);
+            cursor: pointer;
+            color: color($colors, neutral, 100);
+            transition: 0.3s ease-in-out;
         }
     }
 

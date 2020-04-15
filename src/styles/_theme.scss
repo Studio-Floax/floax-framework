@@ -6,40 +6,25 @@
 // -------------------------------------------------------------------------------------------
 
 $values: (
-    sky: (
+    oxygen: (
         hue: 205,
         saturation: 98,
         light: 60
     ),
-    sun: (
+    carbon: (
         hue: 26,
         saturation: 95,
         light: 70
     ),
-    mars: (
-        hue: 347,
-        saturation: 83,
-        light: 60
-    ),
-    astro: (
+    hydrogen: (
         hue: 229,
         saturation: 61,
         light: 50
     ),
-    success: (
-        hue: 160,
-        saturation: 100,
-        light: 50
-    ),
-    warning: (
-        hue: 40,
-        saturation: 100,
-        light: 50
-    ),
-    danger: (
-        hue: 6,
-        saturation: 100,
-        light: 62
+    nitrogen: (
+        hue: 347,
+        saturation: 83,
+        light: 60
     ),
     neutral: (
         hue: 230,
@@ -50,96 +35,57 @@ $values: (
 
 
 $colors: (
-    sky: (
-        0   : hsl(color($values, sky, hue), color($values, sky, saturation), 98),
-        100 : hsl(color($values, sky, hue), color($values, sky, saturation), 95),
-        200 : hsl(color($values, sky, hue), color($values, sky, saturation), 90),
-        300 : hsl(color($values, sky, hue), color($values, sky, saturation), 85),
-        400 : hsl(color($values, sky, hue), color($values, sky, saturation), 80),
-        500 : hsl(color($values, sky, hue), color($values, sky, saturation), color($values, sky, light)),
-        600 : hsl(color($values, sky, hue), color($values, sky, saturation), 40),
-        700 : hsl(color($values, sky, hue), color($values, sky, saturation), 35),
-        800 : hsl(color($values, sky, hue), color($values, sky, saturation), 30),
-        900 : hsl(color($values, sky, hue), color($values, sky, saturation), 25),
-        1000: hsl(color($values, sky, hue), color($values, sky, saturation), 10)
+    oxygen: (
+        0   : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 98),
+        100 : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 95),
+        200 : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 90),
+        300 : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 85),
+        400 : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 80),
+        500 : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), color($values, oxygen, light)),
+        600 : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 40),
+        700 : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 35),
+        800 : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 30),
+        900 : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 25),
+        1000: hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 10)
     ),
-    sun: (
-        0   : hsl(color($values, sun, hue), color($values, sun, saturation), 98),
-        100 : hsl(color($values, sun, hue), color($values, sun, saturation), 95),
-        200 : hsl(color($values, sun, hue), color($values, sun, saturation), 90),
-        300 : hsl(color($values, sun, hue), color($values, sun, saturation), 85),
-        400 : hsl(color($values, sun, hue), color($values, sun, saturation), 80),
-        500 : hsl(color($values, sun, hue), color($values, sun, saturation), color($values, sun, light)),
-        600 : hsl(color($values, sun, hue), color($values, sun, saturation), 40),
-        700 : hsl(color($values, sun, hue), color($values, sun, saturation), 35),
-        800 : hsl(color($values, sun, hue), color($values, sun, saturation), 30),
-        900 : hsl(color($values, sun, hue), color($values, sun, saturation), 25),
-        1000: hsl(color($values, sun, hue), color($values, sun, saturation), 10)
+    carbon: (
+        0   : hsl(color($values, carbon, hue), color($values, carbon, saturation), 98),
+        100 : hsl(color($values, carbon, hue), color($values, carbon, saturation), 95),
+        200 : hsl(color($values, carbon, hue), color($values, carbon, saturation), 90),
+        300 : hsl(color($values, carbon, hue), color($values, carbon, saturation), 85),
+        400 : hsl(color($values, carbon, hue), color($values, carbon, saturation), 80),
+        500 : hsl(color($values, carbon, hue), color($values, carbon, saturation), color($values, carbon, light)),
+        600 : hsl(color($values, carbon, hue), color($values, carbon, saturation), 40),
+        700 : hsl(color($values, carbon, hue), color($values, carbon, saturation), 35),
+        800 : hsl(color($values, carbon, hue), color($values, carbon, saturation), 30),
+        900 : hsl(color($values, carbon, hue), color($values, carbon, saturation), 25),
+        1000: hsl(color($values, carbon, hue), color($values, carbon, saturation), 10)
     ),
-    mars: (
-        0   : hsl(color($values, mars, hue), color($values, mars, saturation), 98),
-        100 : hsl(color($values, mars, hue), color($values, mars, saturation), 95),
-        200 : hsl(color($values, mars, hue), color($values, mars, saturation), 90),
-        300 : hsl(color($values, mars, hue), color($values, mars, saturation), 85),
-        400 : hsl(color($values, mars, hue), color($values, mars, saturation), 80),
-        500 : hsl(color($values, mars, hue), color($values, mars, saturation), color($values, mars, light)),
-        600 : hsl(color($values, mars, hue), color($values, mars, saturation), 40),
-        700 : hsl(color($values, mars, hue), color($values, mars, saturation), 35),
-        800 : hsl(color($values, mars, hue), color($values, mars, saturation), 30),
-        900 : hsl(color($values, mars, hue), color($values, mars, saturation), 25),
-        1000: hsl(color($values, mars, hue), color($values, mars, saturation), 10)
+    hydrogen: (
+        0   : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 98),
+        100 : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 95),
+        200 : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 90),
+        300 : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 85),
+        400 : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 80),
+        500 : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), color($values, hydrogen, light)),
+        600 : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 40),
+        700 : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 35),
+        800 : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 30),
+        900 : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 25),
+        1000: hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 10)
     ),
-    astro: (
-        0   : hsl(color($values, astro, hue), color($values, astro, saturation), 98),
-        100 : hsl(color($values, astro, hue), color($values, astro, saturation), 95),
-        200 : hsl(color($values, astro, hue), color($values, astro, saturation), 90),
-        300 : hsl(color($values, astro, hue), color($values, astro, saturation), 85),
-        400 : hsl(color($values, astro, hue), color($values, astro, saturation), 80),
-        500 : hsl(color($values, astro, hue), color($values, astro, saturation), color($values, astro, light)),
-        600 : hsl(color($values, astro, hue), color($values, astro, saturation), 40),
-        700 : hsl(color($values, astro, hue), color($values, astro, saturation), 35),
-        800 : hsl(color($values, astro, hue), color($values, astro, saturation), 30),
-        900 : hsl(color($values, astro, hue), color($values, astro, saturation), 25),
-        1000: hsl(color($values, astro, hue), color($values, astro, saturation), 10)
-    ),
-    success: (
-        0   : hsl(color($values, success, hue), color($values, success, saturation), 98),
-        100 : hsl(color($values, success, hue), color($values, success, saturation), 95),
-        200 : hsl(color($values, success, hue), color($values, success, saturation), 90),
-        300 : hsl(color($values, success, hue), color($values, success, saturation), 85),
-        400 : hsl(color($values, success, hue), color($values, success, saturation), 80),
-        500 : hsl(color($values, success, hue), color($values, success, saturation), color($values, success, light)),
-        600 : hsl(color($values, success, hue), color($values, success, saturation), 40),
-        700 : hsl(color($values, success, hue), color($values, success, saturation), 35),
-        800 : hsl(color($values, success, hue), color($values, success, saturation), 30),
-        900 : hsl(color($values, success, hue), color($values, success, saturation), 25),
-        1000: hsl(color($values, success, hue), color($values, success, saturation), 10)
-    ),
-    warning: (
-        0   : hsl(color($values, warning, hue), color($values, warning, saturation), 98),
-        100 : hsl(color($values, warning, hue), color($values, warning, saturation), 95),
-        200 : hsl(color($values, warning, hue), color($values, warning, saturation), 90),
-        300 : hsl(color($values, warning, hue), color($values, warning, saturation), 85),
-        400 : hsl(color($values, warning, hue), color($values, warning, saturation), 80),
-        500 : hsl(color($values, warning, hue), color($values, warning, saturation), color($values, warning, light)),
-        600 : hsl(color($values, warning, hue), color($values, warning, saturation), 40),
-        700 : hsl(color($values, warning, hue), color($values, warning, saturation), 35),
-        800 : hsl(color($values, warning, hue), color($values, warning, saturation), 30),
-        900 : hsl(color($values, warning, hue), color($values, warning, saturation), 25),
-        1000: hsl(color($values, warning, hue), color($values, warning, saturation), 10)
-    ),
-    danger: (
-        0   : hsl(color($values, danger, hue), color($values, danger, saturation), 98),
-        100 : hsl(color($values, danger, hue), color($values, danger, saturation), 95),
-        200 : hsl(color($values, danger, hue), color($values, danger, saturation), 90),
-        300 : hsl(color($values, danger, hue), color($values, danger, saturation), 85),
-        400 : hsl(color($values, danger, hue), color($values, danger, saturation), 80),
-        500 : hsl(color($values, danger, hue), color($values, danger, saturation), color($values, danger, light)),
-        600 : hsl(color($values, danger, hue), color($values, danger, saturation), 40),
-        700 : hsl(color($values, danger, hue), color($values, danger, saturation), 35),
-        800 : hsl(color($values, danger, hue), color($values, danger, saturation), 30),
-        900 : hsl(color($values, danger, hue), color($values, danger, saturation), 25),
-        1000: hsl(color($values, danger, hue), color($values, danger, saturation), 10)
+    nitrogen: (
+        0   : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 98),
+        100 : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 95),
+        200 : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 90),
+        300 : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 85),
+        400 : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 80),
+        500 : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), color($values, nitrogen, light)),
+        600 : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 40),
+        700 : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 35),
+        800 : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 30),
+        900 : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 25),
+        1000: hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 10)
     ),
     neutral: (
         100 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) + 30),
