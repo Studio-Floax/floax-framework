@@ -1,15 +1,15 @@
 {
-  "name": "components",
-  "version": "0.0.1",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --base-href /components/ --prod",
-    "build-lib": "ng build components",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
-  },
+  "name": "@floax/components",
+  "version": "0.0.6",
+  "description" : "A set of components, ready to use in your application.",
+  "author": "Studio Floax",
+  "keywords": [
+    "angular",
+    "components",
+    "floax",
+    "typescript"
+  ],
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14"

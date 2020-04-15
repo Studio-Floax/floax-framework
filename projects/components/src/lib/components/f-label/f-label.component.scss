@@ -1,0 +1,47 @@
+@import "src/styles/main.scss";
+
+
+@mixin color-contrast($color, $background, $text) {
+    background-color: color($colors, $color, $background);
+    color: color($colors, $color, $text);
+}
+.label-container {
+    align-items:     center;
+    display:         flex;
+    justify-content: center;
+    
+    border: none;
+    border-radius: 1px;
+
+    font-size:   1rem;
+    font-weight: 500;
+
+    padding: 2px 5px;
+
+    width: fit-content;
+
+    @include color-contrast(neutral, 200, 700);
+    
+    span {
+        display: flex;
+        flex-wrap: nowrap;
+        height: auto;
+        width: 100%;
+    }
+    
+    &.level-primary {
+        @include color-contrast(oxygen, 100, 600);
+    }
+
+    &.level-secondary {
+        @include color-contrast(carbon, 100, 600);
+    }
+
+    &.level-accent {
+        @include color-contrast(hydrogen, 100, 600);
+    }
+
+    &.level-success {
+        @include color-contrast(nitrogen, 100, 600);
+    }
+}

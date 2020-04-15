@@ -2,120 +2,54 @@
 
 // Variables
 $button-padding: 5px;
-$icon-margin:    20%;
+$icon-margin: 20%;
 
 // Mixins
 @mixin btn-type($color) {
-    &.fill-fill {
-        background-color: $color;
-        border: 1px solid $color;
-        transition: 0.3s;
-        transition-timing-function: ease;
+    &.level-primary {
+        background-color: color($colors, $color, 500);
+        color: color($colors, $color, 0);
 
         &:hover {
-            background-color: transparent;
-            cursor: pointer;
-            transition: 0.3s;
-            transition-timing-function: ease;
-        }
-
-        &:focus {
-            background-color: $color;
-            transition: 0.3s;
-            transition-timing-function: ease;
-        }
-
-        &:active {
-            background-color: $color;
-            transition: 0.3s;
-            transition-timing-function: ease;
+            background-color: color($colors, $color, 600);;
+            color: color($colors, neutral, 100);
         }
     }
 
-    &.fill-border {
+    &.level-secondary {
+        background-color: color($colors, $color, 200);
+        color: color($colors, $color, 600);
+
+        &:hover {
+            background-color: color($colors, $color, 500);
+            color: color($colors, $color, 0);
+        }
+    }
+
+    &.level-ghost {
         background-color: transparent;
-        border: 1px solid $color;
-        transition: 0.3s;
-        transition-timing-function: ease;
-        
-        &:hover {
-            background-color: $color;
-            cursor: pointer;
-            transition: 0.3s;
-            transition-timing-function: ease;
-        }
-
-        &:focus {
-            background-color: transparent;
-            transition: 0.3s;
-            transition-timing-function: ease;
-        }
-
-        &:active {
-            background-color: transparent;
-            transition: 0.3s;
-            transition-timing-function: ease;
-        }
-    }
-
-    &.fill-ghost {
-        background-color: transparent;
-        border: 1px solid transparent;
-        transition: 0.3s;
-        transition-timing-function: ease;
+        color: color($colors, $color, 600);
 
         &:hover {
-            border: 1px solid $color;
-            cursor: pointer;
-            transition: 0.3s;
-            transition-timing-function: ease;
-        }
-
-        &:focus {
-            border: 1px solid $color;
-            transition: 0.3s;
-            transition-timing-function: ease;
-        }
-
-        &:active {
-            background-color: $color;
-            transition: 0.3s;
-            transition-timing-function: ease;
+            background-color: color($colors, $color, 200);
+            color: color($colors, $color, 600);
         }
     }
 }
 
-@mixin btn-size-s {
-    height: 20px;
-    width: auto;
-    padding: 7px 15px;
-
-    font-size: 0.8rem;
-}
-
-@mixin btn-size-m {
-    height: 35px;
-    width: auto;
-    padding: 7px 15px;
-
-    font-size: 1rem;
-}
-
-@mixin btn-size-l {
-    height: 50px;
-    width: auto;
-    padding: 7px 15px;
-
-    font-size: 1.3rem;
-}
-
-@mixin btn-size($padding, $font){
-    width: auto;
-    padding: $padding;
-
+@mixin btn-size($padding, $font) {
     font-size: $font;
+    padding: $padding;
+    width: auto;
 }
- 
+
+@mixin btn-colors() {
+    @each $color in $colors {
+        &.btn-#{nth($color, 1)} {
+            @include btn-type(nth($color, 1));
+        }
+    }
+}
 
 :host ::ng-deep .icon-start {
     margin-right: 5px;
@@ -128,50 +62,31 @@ $icon-margin:    20%;
 // Properties
 button {
     &.btn {
-        display:         flex;
+        align-items: center;
+        display: flex;
         justify-content: center;
-        align-items:     center;
+
         border: none;
-        border-radius: 5px;
-        font-size:   1.3rem;
+        border-radius: 3px;
+
+        background-color: color($colors, neutral, 500);
+        color: color($colors, neutral, 100);
+
+        font-size: 1.3rem;
         font-weight: 200;
+
         padding-inline: $button-padding;
-        
-        @include btn-type(color(default, base));
-    }
-    
-    // Button fill
-    &.btn-primary {
-        @include btn-type(color(primary, base));
-    }
-    
-    &.btn-secondary {
-        @include btn-type(color(secondary, base));
-    }
-    
-    &.btn-accent {
-        @include btn-type(color(accent, base));
-    }
-    
-    &.btn-default {
-        @include btn-type(color(default, base));
-    }
-    
-    &.btn-success {
-        @include btn-type(color(success, base));
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+            background-color: color($colors, neutral, 600);
+            cursor: pointer;
+            color: color($colors, neutral, 100);
+            transition: 0.3s ease-in-out;
+        }
     }
 
-    &.btn-info {
-        @include btn-type(color(info, base));
-    }
-    
-    &.btn-warning {
-        @include btn-type(color(warning, base));
-    }
-    
-    &.btn-danger {
-        @include btn-type(color(danger, base));
-    }
+    @include btn-colors();
 
     // Button Size
     &.size-s {

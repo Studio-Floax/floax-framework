@@ -24,6 +24,6 @@ export class PublicComponent {
 
   inputStyles = {
     'level': 'secondary',
-    'fill': 'ghost'
+    'fill': 'border'
   }
 }

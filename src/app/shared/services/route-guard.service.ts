@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
-import { CanActivate,
-         ActivatedRouteSnapshot,
-         RouterStateSnapshot,
-         Router, 
-         UrlTree} from '@angular/router';
+import {
+  CanActivate,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot,
+  Router,
+  UrlTree
+} from '@angular/router';
 import * as jsrsasign from 'jsrsasign';
 
 
@@ -16,20 +18,27 @@ export class CanActivateRouteGuard implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree {
 
-    // Convert Public Key to Object
-    let pubKey = jsrsasign.KEYUTIL.getKey(localStorage.getItem("public_key"));
+    if (localStorage.getItem("public_key")) {
+      // Convert Public Key to Object
+      let pubKey = jsrsasign.KEYUTIL.getKey(localStorage.getItem("public_key"));
 
-    // Check validity of the JWT's signature
-    let isValid = jsrsasign.KJUR.jws.JWS.verifyJWT(localStorage.getItem("access_token"), pubKey, { alg : [ 'RS256' ] });
-    
+      // Check validity of the JWT's signature
+      let isValid = jsrsasign.KJUR.jws.JWS.verifyJWT(localStorage.getItem("access_token"), pubKey, { alg: ['RS256'] });
 
-    // If Token isn't valid, redirect to the Login page
-    if (!isValid) {
+
+      // If Token isn't valid, redirect to the Login page
+      if (!isValid) {
+        const url = 'admin/login';
+        const tree: UrlTree = this.router.parseUrl(url);
+        return tree;
+      } else {
+        return true
+      }
+    }
+    else {
       const url = 'admin/login';
       const tree: UrlTree = this.router.parseUrl(url);
       return tree;
-    } else {
-      return true
     }
   }
 }

@@ -1,6 +1,8 @@
 {
-  "name": "nebula",
-  "version": "0.0.0",
+  "name": "floax",
+  "version": "0.0.2",
+  "author": "Studio Floax",
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,9 +10,10 @@
     "build:libs": "ng build --project components && ng build --project services",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "packagr": "ng-packagr -p ng-package.json"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "^8.2.14",
     "@angular/common": "^8.2.14",
