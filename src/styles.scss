@@ -1,0 +1,22 @@
+@use 'styles/theming';
+@use 'styles/functions';
+@use 'styles/variables';
+@use 'styles/mixins';
+
+@forward 'styles/theming';
+@forward 'styles/functions';
+@forward 'styles/variables';
+@forward 'styles/mixins';
+
+html, body{
+    background-color: theming.color(neutral, 0);
+    width: 100%;
+    min-height: 100%;
+    padding: 0;
+    margin: 0;
+
+    > *{
+        font-family: theming.$primary-font, Helvetica, sans-serif!important;
+        font-size: 16px;
+    }
+}
