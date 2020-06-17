@@ -1,9 +1,9 @@
-@import "src/styles/main.scss";
+@use "src/styles.scss";
 
 
 @mixin color-contrast($color, $background, $text) {
-    background-color: color($colors, $color, $background);
-    color: color($colors, $color, $text);
+    background-color: styles.color($color, $background);
+    color: styles.color($color, $text);
 }
 .label-container {
     align-items:     center;

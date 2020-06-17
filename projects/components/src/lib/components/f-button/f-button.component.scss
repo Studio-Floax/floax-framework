@@ -1,4 +1,4 @@
-@import "src/styles/main";
+@use "src/styles.scss";
 
 // Variables
 $button-padding: 5px;
@@ -7,32 +7,32 @@ $icon-margin: 20%;
 // Mixins
 @mixin btn-type($color) {
     &.level-primary {
-        background-color: color($colors, $color, 500);
-        color: color($colors, $color, 0);
+        background-color: styles.color($color, 500);
+        color: styles.color($color, 0);
 
         &:hover {
-            background-color: color($colors, $color, 600);;
-            color: color($colors, neutral, 100);
+            background-color: styles.color($color, 600);
+            color: styles.color(neutral, 100);
         }
     }
 
     &.level-secondary {
-        background-color: color($colors, $color, 200);
-        color: color($colors, $color, 600);
+        background-color: styles.color($color, 200);
+        color: styles.color($color, 600);
 
         &:hover {
-            background-color: color($colors, $color, 500);
-            color: color($colors, $color, 0);
+            background-color: styles.color($color, 500);
+            color: styles.color($color, 0);
         }
     }
 
     &.level-ghost {
         background-color: transparent;
-        color: color($colors, $color, 600);
+        color: styles.color($color, 600);
 
         &:hover {
-            background-color: color($colors, $color, 200);
-            color: color($colors, $color, 600);
+            background-color: styles.color($color, 200);
+            color: styles.color($color, 600);
         }
     }
 }
@@ -44,7 +44,7 @@ $icon-margin: 20%;
 }
 
 @mixin btn-colors() {
-    @each $color in $colors {
+    @each $color in styles.$palettes {
         &.btn-#{nth($color, 1)} {
             @include btn-type(nth($color, 1));
         }
@@ -69,8 +69,8 @@ button {
         border: none;
         border-radius: 3px;
 
-        background-color: color($colors, neutral, 500);
-        color: color($colors, neutral, 100);
+        background-color: styles.color(neutral, 500);
+        color: styles.color(neutral, 100);
 
         font-size: 1.3rem;
         font-weight: 400;
@@ -80,9 +80,9 @@ button {
         transition: 0.3s ease-in-out;
 
         &:hover {
-            background-color: color($colors, neutral, 600);
+            background-color: styles.color(neutral, 600);
             cursor: pointer;
-            color: color($colors, neutral, 100);
+            color: styles.color(neutral, 100);
             transition: 0.3s ease-in-out;
         }
     }

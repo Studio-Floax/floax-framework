@@ -1,22 +1,18 @@
 @use 'theme/palettes';
 @use 'theme/colors' with (
-    $palette: (
-        primary: (
-            h: 224,
-            s: 47
-        ),
-        secondary: (
-            h: 357,
-            s: 90
-        ),
-        accent: (
-            h: 39,
-            s: 93
-        ),
-        neutral: (
-            h: 230,
-            s: 15
-        )
+    $tones: (
+        0 : 98,
+        100 : 95,
+        200 : 90,
+        300: 85,
+        400: 80,
+        500: 65,
+        600: 40,
+        700: 35,
+        750: 33,
+        800: 30,
+        900: 25,
+        1000: 10
     )
 );
 
@@ -30,17 +26,24 @@
 @forward 'theme/palettes';
 
 $palettes: ();
+$states: ();
 $cats: ();
 
 @each $key, $value in colors.$palette{
     $map: ();
-    $map: map-merge($map, ($key: f.create_colour_map($value)));
+    $map: map-merge($map, ($key: f.create_color_map($value)));
     $palettes: map-merge($palettes, $map);
+}
+
+@each $key, $value in colors.$states{
+    $map: ();
+    $map: map-merge($map, ($key: f.create_color_map($value)));
+    $states: map-merge($states, $map);
 }
 
 @each $key, $value in colors.$categories{
     $map: ();
-    $map: map-merge($map, ($key: f.create_colour_map($value)));
+    $map: map-merge($map, ($key: f.create_color_map($value)));
     $cats: map-merge($cats, $map);
 }
 
@@ -59,99 +62,99 @@ $cats: ();
 //
 // -------------------------------------------------------------------------------------------
 
-$values: (
-    oxygen: (
-        hue: 205,
-        saturation: 98,
-        light: 60
-    ),
-    carbon: (
-        hue: 26,
-        saturation: 95,
-        light: 70
-    ),
-    hydrogen: (
-        hue: 229,
-        saturation: 61,
-        light: 50
-    ),
-    nitrogen: (
-        hue: 347,
-        saturation: 83,
-        light: 60
-    ),
-    neutral: (
-        hue: 230,
-        saturation: 15,
-        light: 70
-    )
-);
+// $values: (
+//     oxygen: (
+//         hue: 205,
+//         saturation: 98,
+//         light: 60
+//     ),
+//     carbon: (
+//         hue: 26,
+//         saturation: 95,
+//         light: 70
+//     ),
+//     hydrogen: (
+//         hue: 229,
+//         saturation: 61,
+//         light: 50
+//     ),
+//     nitrogen: (
+//         hue: 347,
+//         saturation: 83,
+//         light: 60
+//     ),
+//     neutral: (
+//         hue: 230,
+//         saturation: 15,
+//         light: 70
+//     )
+// );
 
 
-$colors: (
-    oxygen: (
-        0   : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 98),
-        100 : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 95),
-        200 : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 90),
-        300 : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 85),
-        400 : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 80),
-        500 : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), color($values, oxygen, light)),
-        600 : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 40),
-        700 : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 35),
-        800 : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 30),
-        900 : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 25),
-        1000: hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 10)
-    ),
-    carbon: (
-        0   : hsl(color($values, carbon, hue), color($values, carbon, saturation), 98),
-        100 : hsl(color($values, carbon, hue), color($values, carbon, saturation), 95),
-        200 : hsl(color($values, carbon, hue), color($values, carbon, saturation), 90),
-        300 : hsl(color($values, carbon, hue), color($values, carbon, saturation), 85),
-        400 : hsl(color($values, carbon, hue), color($values, carbon, saturation), 80),
-        500 : hsl(color($values, carbon, hue), color($values, carbon, saturation), color($values, carbon, light)),
-        600 : hsl(color($values, carbon, hue), color($values, carbon, saturation), 40),
-        700 : hsl(color($values, carbon, hue), color($values, carbon, saturation), 35),
-        800 : hsl(color($values, carbon, hue), color($values, carbon, saturation), 30),
-        900 : hsl(color($values, carbon, hue), color($values, carbon, saturation), 25),
-        1000: hsl(color($values, carbon, hue), color($values, carbon, saturation), 10)
-    ),
-    hydrogen: (
-        0   : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 98),
-        100 : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 95),
-        200 : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 90),
-        300 : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 85),
-        400 : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 80),
-        500 : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), color($values, hydrogen, light)),
-        600 : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 40),
-        700 : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 35),
-        800 : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 30),
-        900 : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 25),
-        1000: hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 10)
-    ),
-    nitrogen: (
-        0   : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 98),
-        100 : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 95),
-        200 : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 90),
-        300 : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 85),
-        400 : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 80),
-        500 : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), color($values, nitrogen, light)),
-        600 : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 40),
-        700 : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 35),
-        800 : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 30),
-        900 : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 25),
-        1000: hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 10)
-    ),
-    neutral: (
-        100 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) + 30),
-        200 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) + 27),
-        300 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) + 24),
-        400 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) + 20),
-        500 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light)),
-        600 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) - 45),
-        700 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) - 50),
-        800 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) - 55),
-        900 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) - 60),
-        1000: hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) - 65)
-    )
-);
+// $colors: (
+//     oxygen: (
+//         0   : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 98),
+//         100 : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 95),
+//         200 : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 90),
+//         300 : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 85),
+//         400 : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 80),
+//         500 : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), color($values, oxygen, light)),
+//         600 : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 40),
+//         700 : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 35),
+//         800 : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 30),
+//         900 : hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 25),
+//         1000: hsl(color($values, oxygen, hue), color($values, oxygen, saturation), 10)
+//     ),
+//     carbon: (
+//         0   : hsl(color($values, carbon, hue), color($values, carbon, saturation), 98),
+//         100 : hsl(color($values, carbon, hue), color($values, carbon, saturation), 95),
+//         200 : hsl(color($values, carbon, hue), color($values, carbon, saturation), 90),
+//         300 : hsl(color($values, carbon, hue), color($values, carbon, saturation), 85),
+//         400 : hsl(color($values, carbon, hue), color($values, carbon, saturation), 80),
+//         500 : hsl(color($values, carbon, hue), color($values, carbon, saturation), color($values, carbon, light)),
+//         600 : hsl(color($values, carbon, hue), color($values, carbon, saturation), 40),
+//         700 : hsl(color($values, carbon, hue), color($values, carbon, saturation), 35),
+//         800 : hsl(color($values, carbon, hue), color($values, carbon, saturation), 30),
+//         900 : hsl(color($values, carbon, hue), color($values, carbon, saturation), 25),
+//         1000: hsl(color($values, carbon, hue), color($values, carbon, saturation), 10)
+//     ),
+//     hydrogen: (
+//         0   : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 98),
+//         100 : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 95),
+//         200 : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 90),
+//         300 : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 85),
+//         400 : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 80),
+//         500 : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), color($values, hydrogen, light)),
+//         600 : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 40),
+//         700 : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 35),
+//         800 : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 30),
+//         900 : hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 25),
+//         1000: hsl(color($values, hydrogen, hue), color($values, hydrogen, saturation), 10)
+//     ),
+//     nitrogen: (
+//         0   : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 98),
+//         100 : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 95),
+//         200 : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 90),
+//         300 : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 85),
+//         400 : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 80),
+//         500 : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), color($values, nitrogen, light)),
+//         600 : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 40),
+//         700 : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 35),
+//         800 : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 30),
+//         900 : hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 25),
+//         1000: hsl(color($values, nitrogen, hue), color($values, nitrogen, saturation), 10)
+//     ),
+//     neutral: (
+//         100 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) + 30),
+//         200 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) + 27),
+//         300 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) + 24),
+//         400 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) + 20),
+//         500 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light)),
+//         600 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) - 45),
+//         700 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) - 50),
+//         800 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) - 55),
+//         900 : hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) - 60),
+//         1000: hsl(color($values, neutral, hue), color($values, neutral, saturation), color($values, neutral, light) - 65)
+//     )
+// );
 
