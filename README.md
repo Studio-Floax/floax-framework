@@ -1,3 +1,3 @@
-# The Nebula Framework
+# The Floax Framework
 
-Develop By Studio Floax
+Developed By Studio Floax

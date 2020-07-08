@@ -1,31 +1,26 @@
-@function color($keys...) {
-    $value: $colors;
+@use 'theme/colors';
+
+@function list($map, $keys...) {
     @each $key in $keys {
-        $value: map-get($value, $key);
+        $map: map-get($map, $key);
     }
-    @return $value;
+    @return $map;
 }
 
-@function neutrals($keys...) {
-    $value: $neutrals;
-    @each $key in $keys {
-        $value: map-get($value, $key);
+@function create_color_map($color){
+    $map-tone: ();
+
+    @each $key, $value in colors.$tones{
+        $map: ();
+        $map: map-merge($map, ($key: hsl(map-get($color, h), map-get($color, s), $value)));
+        $map-tone: map-merge($map-tone, $map);
     }
-    @return $value;
+    @return $map-tone;
 }
 
-@function text-color($name, $variation) {
-    $values: map-get($neutrals, $name);
-    $value: map-get($values, $variation);
-    $variable: --ion-color-#{$name}-#{$variation};
-
-    @return var(#{$variable}, $value);
-}  
-
-@function state-color($name, $variation) {
-    $values: map-get($neutrals, $name);
-    $value: map-get($values, $variation);
-    $variable: --ion-color-#{$name}-#{$variation};
-
-    @return var(#{$variable}, $value);
-}  
+// @function color($map, $keys...) {
+//     @each $key in $keys {
+//         $map: map-get($map, $key);
+//     }
+//     @return $map;
+// }

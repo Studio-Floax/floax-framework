@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ComponentsComponent } from './components.component';
 import { FButtonComponent } from './components/f-button/f-button.component';
 import { FInputComponent } from './components/f-input/f-input.component';
+import { FLabelComponent } from './components/f-label/f-label.component';
 
 
 
@@ -9,14 +11,16 @@ import { FInputComponent } from './components/f-input/f-input.component';
   declarations: [
     ComponentsComponent, 
     FButtonComponent, 
-    FInputComponent, 
+    FInputComponent, FLabelComponent, 
   ],
   imports: [
+    CommonModule
   ],
   exports: [
     ComponentsComponent, 
     FButtonComponent,
     FInputComponent, 
+    FLabelComponent
   ]
 })
 export class ComponentsModule { }
